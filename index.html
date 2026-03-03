@@ -21,7 +21,6 @@
       --r:26px;
     }
 
-    /* smooth scroll to sections */
     html{ scroll-behavior: smooth; }
 
     /* Load your TTF font from the repo */
@@ -46,6 +45,7 @@
       overflow-x: hidden;
     }
 
+    /* Top title */
     .page-top{
       max-width: 980px;
       margin: 34px auto 18px;
@@ -94,6 +94,7 @@
       overflow: hidden;
     }
 
+    /* HERO */
     .hero{
       position: relative;
       padding: 22px 22px 18px;
@@ -103,6 +104,7 @@
         linear-gradient(135deg, #ff6a2a 0%, #ff3a2e 40%, #3a0b1e 100%);
     }
 
+    /* HERO image overlay */
     .hero::after{
       content:"";
       position:absolute;
@@ -155,6 +157,7 @@
       font-size: 12px;
       font-weight: 700;
       border: 1px solid rgba(255,255,255,.35);
+      white-space: nowrap;
     }
     .cta .dot{
       width: 22px;
@@ -228,6 +231,7 @@
       color: rgba(255,255,255,.75);
     }
 
+    /* LOGO STRIP */
     .strip{
       background: rgba(10,10,10,.92);
       border-top: 1px solid rgba(255,255,255,.08);
@@ -266,6 +270,7 @@
       opacity: .9;
     }
 
+    /* CONTENT */
     .content{
       background: rgba(7,7,8,.96);
       padding: 26px 22px 26px;
@@ -312,6 +317,10 @@
       float: right;
     }
 
+    /* ===========================================
+       WORK PREVIEWS (cliccabili)
+       =========================================== */
+
     .works{
       margin-top: 22px;
       display:grid;
@@ -319,7 +328,7 @@
       gap: 16px;
     }
 
-    /* now .work is an <a> link (button) */
+    /* Ora .work è un <a> */
     .work{
       display:block;
       text-decoration:none;
@@ -343,6 +352,14 @@
       z-index: 2;
     }
 
+    /* =====================================================
+       IMMAGINI WORK (CARICA QUI)
+       Cartella: /assets/img/
+       - work-1.JPG  (ATTENZIONE maiuscole/minuscole)
+       - work-2.jpg
+       - work-3.jpg
+       (Queste sono usate SIA nella preview SIA come immagine principale dentro le sezioni Work)
+       ===================================================== */
     .work.one{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
     .work.two{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
     .work.three{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
@@ -355,23 +372,339 @@
       pointer-events:none;
     }
 
-    /* Work detail sections */
-    .work-section{
+    /* ===========================================
+       WORK SECTIONS (layout tipo reference)
+       =========================================== */
+
+    .project{
       background: rgba(7,7,8,.96);
       border-top: 1px solid rgba(255,255,255,.08);
-      padding: 34px 22px;
+      padding: 28px 22px 30px;
+      scroll-margin-top: 24px;
     }
-    .work-section h3{
+
+    .project-hero{
+      display:grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .project-title{
       margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -.2px;
+      font-size: clamp(26px, 3.2vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.4px;
     }
-    .work-section p{
-      margin: 0;
+    .project-sub{
+      margin: 0 0 14px;
       color: rgba(255,255,255,.75);
       font-size: 13px;
       line-height: 1.6;
-      max-width: 70ch;
+      max-width: 68ch;
+    }
+
+    .project-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 16px;
+    }
+
+    .cta.dark{
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .cta.dark .dot{ background: rgba(255,90,31,.95); }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat{
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 14px 14px 12px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+      min-height: 92px;
+    }
+    .stat .n{
+      font-weight: 900;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+    .stat .t{
+      margin-top: 6px;
+      color: rgba(255,255,255,.68);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .project-media{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 45px rgba(0,0,0,.40);
+      overflow: hidden;
+      min-height: 320px;
+      position: relative;
+    }
+    .project-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.25));
+      pointer-events:none;
+    }
+    .project-media.bg1{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
+    .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
+    .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
+
+    /* mid section like reference */
+    .project-mid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .mid-visual{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: radial-gradient(900px 420px at 20% 20%, rgba(255,90,31,.18), rgba(255,90,31,0) 55%),
+                  linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding: 16px;
+      min-height: 260px;
+      overflow:hidden;
+      position: relative;
+    }
+    .mid-visual img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      display:block;
+      background: rgba(0,0,0,.25);
+    }
+    .mid-visual .placeholder{
+      height: 100%;
+      border-radius: 16px;
+      border: 1px dashed rgba(255,255,255,.18);
+      display:grid;
+      place-items:center;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      text-align:center;
+      padding: 18px;
+    }
+
+    .features{
+      display:grid;
+      gap: 12px;
+    }
+    .feature{
+      display:grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items:center;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+    }
+    .f-ico{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255,90,31,.18);
+      border: 1px solid rgba(255,90,31,.22);
+      display:grid;
+      place-items:center;
+      color: rgba(255,255,255,.9);
+      font-weight: 900;
+    }
+    .feature h4{
+      margin: 0 0 4px;
+      font-size: 13px;
+      letter-spacing: -.2px;
+    }
+    .feature p{
+      margin: 0;
+      color: rgba(255,255,255,.68);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    /* Catalog block like reference bottom */
+    .catalog{
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      padding: 18px;
+      position: relative;
+    }
+    .catalog-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .catalog h3{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .catalog small{
+      color: rgba(255,255,255,.62);
+      font-size: 11px;
+    }
+
+    .catalog-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .catalog-item{
+      height: 150px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      overflow:hidden;
+      position: relative;
+    }
+    .catalog-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.45));
+      pointer-events:none;
+    }
+    .catalog-item .label{
+      position:absolute;
+      left: 12px;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1;
+      font-size: 11px;
+      color: rgba(255,255,255,.92);
+      display:flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .catalog-item .label span{
+      color: rgba(255,255,255,.70);
+      font-size: 10px;
+    }
+
+    /* Payment methods block */
+    .pay{
+      margin-top: 18px;
+    }
+    .pay h3{
+      margin: 0 0 12px;
+      text-align:center;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .pay-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .pay-card{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      min-height: 120px;
+      position: relative;
+    }
+    .pay-card strong{
+      display:block;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .pay-card p{
+      margin:0;
+      color: rgba(255,255,255,.65);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .pay-card.primary{
+      background: rgba(255,90,31,.14);
+      border-color: rgba(255,90,31,.22);
+    }
+
+    /* Steps */
+    .steps{
+      margin-top: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding: 18px;
+    }
+    .steps h3{
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .steps-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .step{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.20);
+      padding: 14px;
+      position: relative;
+      overflow:hidden;
+    }
+    .step .big{
+      position:absolute;
+      top: 10px;
+      right: 12px;
+      font-weight: 900;
+      font-size: 38px;
+      color: rgba(255,255,255,.08);
+      letter-spacing: -2px;
+    }
+    .step strong{
+      display:block;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .step p{
+      margin:0;
+      color: rgba(255,255,255,.65);
+      font-size: 11px;
+      line-height: 1.45;
+      max-width: 46ch;
+    }
+
+    /* Optional: disable hover zoom on touch */
+    @media (hover: none){
+      .work:hover{ transform: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .project-hero{ grid-template-columns: 1fr; }
+      .project-mid{ grid-template-columns: 1fr; }
+      .catalog-grid{ grid-template-columns: repeat(2, 1fr); }
+      .pay-grid{ grid-template-columns: repeat(2, 1fr); }
+      .steps-grid{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 860px){
@@ -386,12 +719,11 @@
 
     @media (max-width: 480px){
       .hero{ padding: 18px; }
-      .strip, .content{ padding: 18px; }
+      .strip, .content, .project{ padding: 18px; }
       .hero-nav a{ display:none; }
-    }
-
-    @media (hover: none){
-      .work:hover{ transform: none; }
+      .stats{ grid-template-columns: 1fr; }
+      .catalog-grid{ grid-template-columns: 1fr; }
+      .pay-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -409,6 +741,8 @@
 
   <div class="wrap">
     <main class="card">
+
+      <!-- HERO -->
       <section class="hero">
         <div class="hero-topbar">
           <div class="brand">Ilario</div>
@@ -417,7 +751,7 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
 
-            <!-- now opens mail -->
+            <!-- mailto -->
             <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
               Get in touch
               <span class="dot" aria-hidden="true">
@@ -452,6 +786,7 @@
         </div>
       </section>
 
+      <!-- LOGO STRIP -->
       <section class="strip">
         <div class="trust">Trusted by Brands I’ve helped shape</div>
         <div class="logos" aria-label="Brand logos">
@@ -462,6 +797,7 @@
         </div>
       </section>
 
+      <!-- CONTENT -->
       <section class="content" id="about">
         <div class="content-grid">
           <div>
@@ -489,7 +825,7 @@
           </div>
         </div>
 
-        <!-- works are now buttons/links -->
+        <!-- WORK PREVIEWS (clicca per scrollare alla sezione) -->
         <div class="works" id="projects">
           <a class="work one" href="#work-1" aria-label="Go to Work 1"></a>
           <a class="work two" href="#work-2" aria-label="Go to Work 2"></a>
@@ -497,21 +833,351 @@
         </div>
       </section>
 
-      <!-- Work sections -->
-      <section class="work-section" id="work-1">
-        <h3>Work 1</h3>
-        <p>Qui inserisci descrizione, software usati, obiettivo del progetto, e immagini extra se vuoi.</p>
+      <!-- ======================================================
+           WORK 1 (layout tipo reference - palette dark/arancio)
+           ====================================================== -->
+      <section class="project" id="work-1">
+        <div class="project-hero">
+          <div>
+            <div class="section-kicker">Work 01</div>
+            <h2 class="project-title">Project Title One</h2>
+            <p class="project-sub">
+              Descrizione breve del progetto (obiettivo, ruolo, tools, output).
+              Mantieni 2–3 righe come nella reference.
+            </p>
+
+            <div class="project-actions">
+              <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Work%201%20-%20Info&body=Hi%20Ilario,%0A%0A">
+                Get in touch
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+              <a class="cta dark" href="#projects">
+                Back to previews
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="stats">
+              <div class="stat"><div class="n">65</div><div class="t">frames / shots consegnati</div></div>
+              <div class="stat"><div class="n">7+</div><div class="t">iterazioni di revisione</div></div>
+              <div class="stat"><div class="n">180+</div><div class="t">assets / materiali gestiti</div></div>
+            </div>
+          </div>
+
+          <!-- Immagine principale = stessa della preview -->
+          <div class="project-media bg1" aria-label="Work 1 main image"></div>
+        </div>
+
+        <div class="project-mid">
+          <div class="mid-visual">
+            <!-- =========================================================
+                 IMMAGINE EXTRA (OPZIONALE) PER WORK 1
+                 Carica in /assets/img/ con nome:
+                 - work-1-detail.jpg
+                 Se non la carichi, resta un placeholder.
+                 ========================================================= -->
+            <!-- <img src="assets/img/work-1-detail.jpg" alt="Work 1 detail"> -->
+            <div class="placeholder">Opzionale: carica <strong>assets/img/work-1-detail.jpg</strong><br>per una vista “scheletro / breakdown”.</div>
+          </div>
+
+          <div class="features">
+            <div class="feature">
+              <div class="f-ico">A</div>
+              <div>
+                <h4>High fidelity</h4>
+                <p>Materiali, lighting e post coerenti con il mood del progetto.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="f-ico">B</div>
+              <div>
+                <h4>Fast iterations</h4>
+                <p>Workflow ottimizzato per revisioni rapide e output costante.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="f-ico">C</div>
+              <div>
+                <h4>Consistency</h4>
+                <p>Stile uniforme su inquadrature, settaggi e color grading.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog">
+          <div class="catalog-head">
+            <div>
+              <h3>Catalog / Gallery</h3>
+              <small>Sezione tipo reference: griglia di preview aggiuntive</small>
+            </div>
+            <small>2026 • 3D • Render</small>
+          </div>
+
+          <div class="catalog-grid">
+            <!-- =========================================================
+                 GALLERY WORK 1 (OPZIONALE)
+                 Carica in /assets/img/ con nomi:
+                 - work-1-gallery-1.jpg
+                 - work-1-gallery-2.jpg
+                 - work-1-gallery-3.jpg
+                 - work-1-gallery-4.jpg
+                 ========================================================= -->
+            <div class="catalog-item" style="background-image:url('assets/img/work-1-gallery-1.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 01 <span>close-up / detail</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-1-gallery-2.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 02 <span>lighting variant</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-1-gallery-3.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 03 <span>alt camera</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-1-gallery-4.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 04 <span>final</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pay">
+          <h3>Deliverables</h3>
+          <div class="pay-grid">
+            <div class="pay-card primary">
+              <strong>Final Render</strong>
+              <p>Output finale in alta risoluzione + versioni web.</p>
+            </div>
+            <div class="pay-card">
+              <strong>Clay / Breakdown</strong>
+              <p>Passaggi e viewport / clay per mostrare il processo.</p>
+            </div>
+            <div class="pay-card">
+              <strong>Variants</strong>
+              <p>Varianti colore, materiali, inquadrature o luci.</p>
+            </div>
+            <div class="pay-card">
+              <strong>Files</strong>
+              <p>Consegna file sorgenti se richiesto (su accordo).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <h3>Workflow</h3>
+          <div class="steps-grid">
+            <div class="step">
+              <div class="big">1</div>
+              <strong>Brief & References</strong>
+              <p>Raccolta riferimenti, mood e obiettivi del render.</p>
+            </div>
+            <div class="step">
+              <div class="big">2</div>
+              <strong>Production</strong>
+              <p>Modeling / materials / lighting e prime anteprime.</p>
+            </div>
+            <div class="step">
+              <div class="big">3</div>
+              <strong>Final & Delivery</strong>
+              <p>Post, export e consegna nelle risoluzioni richieste.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="work-section" id="work-2">
-        <h3>Work 2</h3>
-        <p>Descrizione del progetto 2…</p>
+      <!-- ========================= WORK 2 ========================= -->
+      <section class="project" id="work-2">
+        <div class="project-hero">
+          <div>
+            <div class="section-kicker">Work 02</div>
+            <h2 class="project-title">Project Title Two</h2>
+            <p class="project-sub">
+              Descrizione breve del progetto 2.
+            </p>
+            <div class="project-actions">
+              <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Work%202%20-%20Info&body=Hi%20Ilario,%0A%0A">
+                Get in touch
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+              <a class="cta dark" href="#projects">
+                Back to previews
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="stats">
+              <div class="stat"><div class="n">12</div><div class="t">scene / set</div></div>
+              <div class="stat"><div class="n">4</div><div class="t">revision rounds</div></div>
+              <div class="stat"><div class="n">2</div><div class="t">final variants</div></div>
+            </div>
+          </div>
+
+          <!-- Immagine principale = stessa della preview -->
+          <div class="project-media bg2" aria-label="Work 2 main image"></div>
+        </div>
+
+        <div class="project-mid">
+          <div class="mid-visual">
+            <!-- OPZIONALE: assets/img/work-2-detail.jpg -->
+            <!-- <img src="assets/img/work-2-detail.jpg" alt="Work 2 detail"> -->
+            <div class="placeholder">Opzionale: carica <strong>assets/img/work-2-detail.jpg</strong></div>
+          </div>
+
+          <div class="features">
+            <div class="feature"><div class="f-ico">A</div><div><h4>Detail</h4><p>Descrizione feature 1.</p></div></div>
+            <div class="feature"><div class="f-ico">B</div><div><h4>Lighting</h4><p>Descrizione feature 2.</p></div></div>
+            <div class="feature"><div class="f-ico">C</div><div><h4>Post</h4><p>Descrizione feature 3.</p></div></div>
+          </div>
+        </div>
+
+        <div class="catalog">
+          <div class="catalog-head">
+            <div>
+              <h3>Catalog / Gallery</h3>
+              <small>Work 2 gallery</small>
+            </div>
+            <small>2026</small>
+          </div>
+
+          <div class="catalog-grid">
+            <!-- OPZIONALE:
+              assets/img/work-2-gallery-1.jpg
+              assets/img/work-2-gallery-2.jpg
+              assets/img/work-2-gallery-3.jpg
+              assets/img/work-2-gallery-4.jpg
+            -->
+            <div class="catalog-item" style="background-image:url('assets/img/work-2-gallery-1.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 01 <span>detail</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-2-gallery-2.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 02 <span>variant</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-2-gallery-3.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 03 <span>alt camera</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-2-gallery-4.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 04 <span>final</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <h3>Workflow</h3>
+          <div class="steps-grid">
+            <div class="step"><div class="big">1</div><strong>Brief</strong><p>Testo step 1.</p></div>
+            <div class="step"><div class="big">2</div><strong>Production</strong><p>Testo step 2.</p></div>
+            <div class="step"><div class="big">3</div><strong>Delivery</strong><p>Testo step 3.</p></div>
+          </div>
+        </div>
       </section>
 
-      <section class="work-section" id="work-3">
-        <h3>Work 3</h3>
-        <p>Descrizione del progetto 3…</p>
+      <!-- ========================= WORK 3 ========================= -->
+      <section class="project" id="work-3">
+        <div class="project-hero">
+          <div>
+            <div class="section-kicker">Work 03</div>
+            <h2 class="project-title">Project Title Three</h2>
+            <p class="project-sub">
+              Descrizione breve del progetto 3.
+            </p>
+            <div class="project-actions">
+              <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Work%203%20-%20Info&body=Hi%20Ilario,%0A%0A">
+                Get in touch
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+              <a class="cta dark" href="#projects">
+                Back to previews
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="stats">
+              <div class="stat"><div class="n">3</div><div class="t">key renders</div></div>
+              <div class="stat"><div class="n">1</div><div class="t">hero shot</div></div>
+              <div class="stat"><div class="n">8</div><div class="t">materials</div></div>
+            </div>
+          </div>
+
+          <!-- Immagine principale = stessa della preview -->
+          <div class="project-media bg3" aria-label="Work 3 main image"></div>
+        </div>
+
+        <div class="project-mid">
+          <div class="mid-visual">
+            <!-- OPZIONALE: assets/img/work-3-detail.jpg -->
+            <!-- <img src="assets/img/work-3-detail.jpg" alt="Work 3 detail"> -->
+            <div class="placeholder">Opzionale: carica <strong>assets/img/work-3-detail.jpg</strong></div>
+          </div>
+
+          <div class="features">
+            <div class="feature"><div class="f-ico">A</div><div><h4>Composition</h4><p>Descrizione feature 1.</p></div></div>
+            <div class="feature"><div class="f-ico">B</div><div><h4>Materials</h4><p>Descrizione feature 2.</p></div></div>
+            <div class="feature"><div class="f-ico">C</div><div><h4>Output</h4><p>Descrizione feature 3.</p></div></div>
+          </div>
+        </div>
+
+        <div class="catalog">
+          <div class="catalog-head">
+            <div>
+              <h3>Catalog / Gallery</h3>
+              <small>Work 3 gallery</small>
+            </div>
+            <small>2026</small>
+          </div>
+
+          <div class="catalog-grid">
+            <!-- OPZIONALE:
+              assets/img/work-3-gallery-1.jpg
+              assets/img/work-3-gallery-2.jpg
+              assets/img/work-3-gallery-3.jpg
+              assets/img/work-3-gallery-4.jpg
+            -->
+            <div class="catalog-item" style="background-image:url('assets/img/work-3-gallery-1.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 01 <span>detail</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-3-gallery-2.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 02 <span>variant</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-3-gallery-3.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 03 <span>alt camera</span></div>
+            </div>
+            <div class="catalog-item" style="background-image:url('assets/img/work-3-gallery-4.jpg'); background-size:cover; background-position:center;">
+              <div class="label">Shot 04 <span>final</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <h3>Workflow</h3>
+          <div class="steps-grid">
+            <div class="step"><div class="big">1</div><strong>Brief</strong><p>Testo step 1.</p></div>
+            <div class="step"><div class="big">2</div><strong>Production</strong><p>Testo step 2.</p></div>
+            <div class="step"><div class="big">3</div><strong>Delivery</strong><p>Testo step 3.</p></div>
+          </div>
+        </div>
       </section>
+
     </main>
   </div>
 </body>
