@@ -13,13 +13,11 @@
       color: #fff;
     }
 
-    /* OPTIONAL: if you upload Futura font files to your repo, this will load them */
-    /* Put your files in: /assets/fonts/ */
+    /* Load your TTF font from the repo */
     @font-face {
-      font-family: "FuturaLocal";
-      src: url("assets/fonts/Futura-Bold.woff2") format("woff2"),
-           url("assets/fonts/Futura-Bold.woff") format("woff");
-      font-weight: 700;
+      font-family: "FuturaCyrExtraBold";
+      src: url("assets/fonts/FUTURACYRILLICEXTRABOLD.TTF") format("truetype");
+      font-weight: 800;
       font-style: normal;
       font-display: swap;
     }
@@ -31,12 +29,12 @@
       padding: 20px;
     }
 
-    /* Name styling: bigger + bold + Futura */
+    /* Name styling: bigger + bold + your font */
     .logo {
-      font-family: "FuturaLocal", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
-      font-weight: 700;
-      font-size: 44px;         /* bigger size */
-      letter-spacing: 1px;     /* optional */
+      font-family: "FuturaCyrExtraBold", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      letter-spacing: 1px;
       line-height: 1;
     }
 
@@ -96,7 +94,6 @@
       background: #222;
     }
 
-    /* Optional: better on mobile */
     @media (max-width: 600px) {
       header { flex-direction: column; gap: 12px; }
       .logo { font-size: 36px; }
