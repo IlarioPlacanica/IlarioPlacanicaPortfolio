@@ -1,93 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ILARIO PLACANICA</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            font-family: 'Futura', sans-serif;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #ff4500;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffa500;
-        }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60vh;
-            text-align: center;
-            background: linear-gradient(to bottom right, #ff4500, #ff7f50);
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .project-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-        .card {
-            background: #111;
-            border: 1px solid #ff4500;
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILARIO PLACANICA</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* OPTIONAL: if you upload Futura font files to your repo, this will load them */
+    /* Put your files in: /assets/fonts/ */
+    @font-face {
+      font-family: "FuturaLocal";
+      src: url("assets/fonts/Futura-Bold.woff2") format("woff2"),
+           url("assets/fonts/Futura-Bold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Name styling: bigger + bold + Futura */
+    .logo {
+      font-family: "FuturaLocal", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
+      font-weight: 700;
+      font-size: 44px;         /* bigger size */
+      letter-spacing: 1px;     /* optional */
+      line-height: 1;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ff4500;
+      transition: color 0.3s;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #ffa500;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      text-align: center;
+      background: linear-gradient(to bottom right, #ff4500, #ff7f50);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #ff4500;
+      border-radius: 8px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+    }
+
+    /* Optional: better on mobile */
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 12px; }
+      .logo { font-size: 36px; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div>ILARIO PLACANICA</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Get in touch</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <h1>Hey, I'm a 3D Visualizer</h1>
-    </section>
-    <div class="project-cards">
-        <div class="card">Project 1</div>
-        <div class="card">Project 2</div>
-        <div class="card">Project 3</div>
-        <div class="card">Project 4</div>
-    </div>
-    <footer>
-        &copy; 2026 ILARIO PLACANICA
-    </footer>
+  <header>
+    <div class="logo">ILARIO PLACANICA</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Get in touch</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hey, I'm a 3D Visualizer</h1>
+  </section>
+
+  <div class="project-cards">
+    <div class="card">Project 1</div>
+    <div class="card">Project 2</div>
+    <div class="card">Project 3</div>
+    <div class="card">Project 4</div>
+  </div>
+
+  <footer>
+    &copy; 2026 ILARIO PLACANICA
+  </footer>
 </body>
 </html>
