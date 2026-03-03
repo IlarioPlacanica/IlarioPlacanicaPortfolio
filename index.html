@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ILARIO PLACANICA</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
+    :root{
+      --bg1:#ff5a1f;
+      --bg2:#ff3d2e;
+      --bg3:#0b0b0b;
+      --card:#0f0f10;
+      --card2:#131315;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --muted2:rgba(255,255,255,.55);
+      --accent:#ff5a1f;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 30px 90px rgba(0,0,0,.55);
+      --r:26px;
     }
 
     /* Load your TTF font from the repo */
@@ -22,109 +30,440 @@
       font-display: swap;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 900px at 10% 10%, rgba(255,90,31,.95), rgba(255,90,31,.0) 55%),
+                  radial-gradient(900px 900px at 55% 10%, rgba(255,61,46,.7), rgba(255,61,46,0) 60%),
+                  radial-gradient(900px 900px at 95% 10%, rgba(40,0,40,.55), rgba(0,0,0,0) 60%),
+                  linear-gradient(135deg, #ff6a2a 0%, #2a0610 55%, #070708 100%);
+      overflow-x: hidden;
     }
 
-    /* Name styling: bigger + bold + your font */
-    .logo {
-      font-family: "FUTURACYRILLICBOLD", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
-      font-weight: 600;
-      font-size: 65px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #ff4500;
-      transition: color 0.3s;
-      font-size: 18px;
-    }
-
-    nav a:hover {
-      color: #ffa500;
-    }
-
-    .hero {
+    /* Top title like the reference */
+    .page-top{
+      max-width: 980px;
+      margin: 34px auto 18px;
+      padding: 0 18px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60vh;
-      text-align: center;
-      background: linear-gradient(to bottom right, #ff4500, #ff7f50);
+      gap: 14px;
     }
-
-    .hero h1 {
-      font-size: 48px;
-      margin: 0;
-    }
-
-    .project-cards {
+    .mark{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      flex: 0 0 auto;
     }
+    .mark svg{ width: 22px; height: 22px; opacity: .95; }
 
-    .card {
-      background: #111;
-      border: 1px solid #ff4500;
-      border-radius: 8px;
-      padding: 20px;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
+    .page-title{
+      font-family: "FUTURACYRILLICBOLD", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
       text-align: center;
-      padding: 20px;
-      background: #222;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 600px) {
-      header { flex-direction: column; gap: 12px; }
-      .logo { font-size: 36px; }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto 56px;
+      padding: 0 18px 34px;
+    }
+
+    /* Main rounded “screen/card” */
+    .card{
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* HERO (top orange section) */
+    .hero{
+      position: relative;
+      padding: 22px 22px 18px;
+      background:
+        radial-gradient(700px 520px at 12% 12%, rgba(255,170,110,.35), rgba(255,170,110,0) 55%),
+        radial-gradient(700px 520px at 72% 18%, rgba(0,0,0,.55), rgba(0,0,0,0) 65%),
+        linear-gradient(135deg, #ff6a2a 0%, #ff3a2e 40%, #3a0b1e 100%);
+    }
+
+    /* Optional hero image overlay (upload assets/img/hero.jpg) */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background-image: url("assets/img/hero.jpg");
+      background-size: cover;
+      background-position: center right;
+      opacity: .35;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero-topbar{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand{
+      font-weight: 700;
+      font-size: 14px;
+      opacity: .9;
+    }
+
+    .hero-nav{
+      display:flex;
+      align-items:center;
+      gap: 16px;
+    }
+    .hero-nav a{
+      color: rgba(255,255,255,.78);
+      text-decoration: none;
+      font-size: 12px;
+      transition: opacity .2s;
+    }
+    .hero-nav a:hover{ opacity: 1; }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 10px 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      color: #121212;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.35);
+    }
+    .cta .dot{
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+    }
+    .cta svg{ width: 12px; height: 12px; }
+
+    .hero-grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 16px;
+      align-items: end;
+      min-height: 230px;
+    }
+
+    .hero-left .kicker{
+      font-size: 14px;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 8px;
+    }
+    .hero-left h2{
+      margin: 0;
+      font-size: clamp(44px, 5.8vw, 66px);
+      line-height: .92;
+      letter-spacing: -.6px;
+    }
+
+    .hero-right{
+      padding-bottom: 8px;
+      text-align: left;
+      max-width: 320px;
+      justify-self: end;
+    }
+    .hero-right h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .hero-right p{
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .services{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .service{
+      font-size: 11px;
+      color: rgba(255,255,255,.78);
+    }
+    .service .num{
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      display:inline-block;
+      min-width: 34px;
+    }
+    .service .label{
+      display:block;
+      margin-top: 4px;
+      color: rgba(255,255,255,.75);
+    }
+
+    /* LOGO STRIP */
+    .strip{
+      background: rgba(10,10,10,.92);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 18px 22px;
+      display:flex;
+      align-items:center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .strip .trust{
+      font-size: 11px;
+      color: rgba(255,255,255,.62);
+      margin-right: auto;
+      max-width: 190px;
+    }
+    .logos{
+      display:flex;
+      gap: 22px;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+    .logo-chip{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+      font-weight: 700;
+      opacity: .9;
+    }
+    .logo-chip .icon{
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.55);
+      opacity: .9;
+    }
+
+    /* SECOND SECTION (dark) */
+    .content{
+      background: rgba(7,7,8,.96);
+      padding: 26px 22px 26px;
+    }
+    .content-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .section-kicker{
+      color: rgba(255,90,31,.9);
+      font-weight: 800;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .content h2{
+      margin: 0;
+      font-size: clamp(32px, 4.5vw, 46px);
+      line-height: 1.03;
+      letter-spacing: -0.6px;
+    }
+
+    .content-right{
+      justify-self: end;
+      max-width: 360px;
+      padding-top: 22px;
+    }
+    .content-right p{
+      margin: 0 0 14px;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .content-right .mini{
+      margin-top: 8px;
+      color: rgba(255,255,255,.55);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+    .content-right .cta{
+      margin-top: 14px;
+      float: right;
+    }
+
+    /* IMAGE TILES */
+    .works{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .work{
+      height: 210px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      position: relative;
+    }
+    /* Optional images (upload these files) */
+    .work.one{ background-image: url("assets/img/work-1.jpg"); background-size: cover; background-position: center; }
+    .work.two{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
+    .work.three{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
+
+    .work::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.22));
+      pointer-events:none;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero-grid, .content-grid{ grid-template-columns: 1fr; }
+      .hero-right{ justify-self: start; max-width: 520px; }
+      .content-right{ justify-self: start; max-width: 520px; padding-top: 8px; }
+      .content-right .cta{ float: none; }
+      .services{ grid-template-columns: repeat(2, 1fr); }
+      .works{ grid-template-columns: 1fr; }
+      .work{ height: 220px; }
+    }
+
+    @media (max-width: 480px){
+      .hero{ padding: 18px; }
+      .strip, .content{ padding: 18px; }
+      .hero-nav a{ display:none; } /* keep button on tiny screens */
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">ILARIO PLACANICA</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Get in touch</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Hey, I'm a 3D Visualizer</h1>
-  </section>
-
-  <div class="project-cards">
-    <div class="card">Project 1</div>
-    <div class="card">Project 2</div>
-    <div class="card">Project 3</div>
-    <div class="card">Project 4</div>
+  <!-- Top title (like the reference image) -->
+  <div class="page-top">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M6 5h8l-4 6H6V5Z" fill="white" opacity=".95"/>
+        <path d="M10 11h8l-4 6h-8l4-6Z" fill="white" opacity=".95"/>
+      </svg>
+    </div>
+    <h1 class="page-title">ILARIO PLACANICA</h1>
   </div>
 
-  <footer>
-    &copy; 2026 ILARIO PLACANICA
-  </footer>
+  <div class="wrap">
+    <main class="card">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-topbar">
+          <div class="brand">Ilario</div>
+          <div class="hero-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a class="cta" href="#contact">
+              Get in touch
+              <span class="dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-grid" id="home">
+          <div class="hero-left">
+            <div class="kicker">Hey, I’m a</div>
+            <h2>3D<br/>Visualizer</h2>
+          </div>
+
+          <div class="hero-right">
+            <h3>Great design should<br/>feel invisible.</h3>
+            <p>
+              From concept to final render, I build visuals that communicate clearly,
+              look premium, and convert.
+            </p>
+          </div>
+        </div>
+
+        <div class="services">
+          <div class="service"><span class="num">#01</span><span class="label">Brand Strategy</span></div>
+          <div class="service"><span class="num">#02</span><span class="label">Identity Design</span></div>
+          <div class="service"><span class="num">#03</span><span class="label">Product Visualization</span></div>
+          <div class="service"><span class="num">#04</span><span class="label">Creative Direction</span></div>
+        </div>
+      </section>
+
+      <!-- LOGO STRIP -->
+      <section class="strip">
+        <div class="trust">Trusted by Brands I’ve helped shape</div>
+        <div class="logos" aria-label="Brand logos">
+          <div class="logo-chip"><span class="icon"></span> Supa Blox</div>
+          <div class="logo-chip"><span class="icon" style="border-radius:6px;"></span> Hype Blox</div>
+          <div class="logo-chip"><span class="icon" style="border-radius:4px;"></span> Frame Blox</div>
+          <div class="logo-chip"><span class="icon" style="border-radius:999px; border-style:dashed;"></span> Ultra Blox</div>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="content" id="about">
+        <div class="content-grid">
+          <div>
+            <div class="section-kicker">Behind the Designs</div>
+            <h2>Shaping<br/>Experiences That<br/>Make Life Simpler</h2>
+          </div>
+
+          <div class="content-right">
+            <p>
+              I’m a visual designer focused on building clean, intuitive visuals
+              that solve real-world problems.
+            </p>
+            <div class="mini">
+              Let’s build something<br/>meaningful together.
+            </div>
+
+            <a class="cta" href="#contact">
+              Get in touch
+              <span class="dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="works" id="projects">
+          <div class="work one" title="Work 1"></div>
+          <div class="work two" title="Work 2"></div>
+          <div class="work three" title="Work 3"></div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
