@@ -21,6 +21,9 @@
       --r:26px;
     }
 
+    /* smooth scroll to sections */
+    html{ scroll-behavior: smooth; }
+
     /* Load your TTF font from the repo */
     @font-face {
       font-family: "FUTURACYRILLICBOLD";
@@ -43,7 +46,6 @@
       overflow-x: hidden;
     }
 
-    /* Top title like the reference */
     .page-top{
       max-width: 980px;
       margin: 34px auto 18px;
@@ -79,12 +81,11 @@
     }
 
     .wrap{
-      max-width: 1200px;   /* wider card */
+      max-width: 1200px;
       margin: 0 auto 56px;
-      padding: 0 14px 34px; /* a bit less side space */
+      padding: 0 14px 34px;
     }
-    
-    /* Main rounded “screen/card” */
+
     .card{
       border-radius: var(--r);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -93,7 +94,6 @@
       overflow: hidden;
     }
 
-    /* HERO (top orange section) */
     .hero{
       position: relative;
       padding: 22px 22px 18px;
@@ -103,7 +103,6 @@
         linear-gradient(135deg, #ff6a2a 0%, #ff3a2e 40%, #3a0b1e 100%);
     }
 
-    /* Optional hero image overlay (upload assets/img/hero.jpg) */
     .hero::after{
       content:"";
       position:absolute;
@@ -229,7 +228,6 @@
       color: rgba(255,255,255,.75);
     }
 
-    /* LOGO STRIP */
     .strip{
       background: rgba(10,10,10,.92);
       border-top: 1px solid rgba(255,255,255,.08);
@@ -268,7 +266,6 @@
       opacity: .9;
     }
 
-    /* SECOND SECTION (dark) */
     .content{
       background: rgba(7,7,8,.96);
       padding: 26px 22px 26px;
@@ -315,14 +312,19 @@
       float: right;
     }
 
-    /* IMAGE TILES */
     .works{
       margin-top: 22px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
+
+    /* now .work is an <a> link (button) */
     .work{
+      display:block;
+      text-decoration:none;
+      color: inherit;
+
       height: 210px;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
@@ -332,16 +334,15 @@
       position: relative;
       transition: transform .25s ease, box-shadow .25s ease;
       transform: translateZ(0);
-      cursor: pointer; 
+      cursor: pointer;
       will-change: transform;
     }
     .work:hover{
       transform: scale(1.05);
       box-shadow: 0 18px 45px rgba(0,0,0,.45);
-      z-index: 2;   
+      z-index: 2;
     }
-    
-    /* Optional images (upload these files) */
+
     .work.one{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
     .work.two{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
     .work.three{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
@@ -354,7 +355,25 @@
       pointer-events:none;
     }
 
-    /* Responsive */
+    /* Work detail sections */
+    .work-section{
+      background: rgba(7,7,8,.96);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 34px 22px;
+    }
+    .work-section h3{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -.2px;
+    }
+    .work-section p{
+      margin: 0;
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
     @media (max-width: 860px){
       .hero-grid, .content-grid{ grid-template-columns: 1fr; }
       .hero-right{ justify-self: start; max-width: 520px; }
@@ -368,9 +387,9 @@
     @media (max-width: 480px){
       .hero{ padding: 18px; }
       .strip, .content{ padding: 18px; }
-      .hero-nav a{ display:none; } /* keep button on tiny screens */
+      .hero-nav a{ display:none; }
     }
-    
+
     @media (hover: none){
       .work:hover{ transform: none; }
     }
@@ -378,7 +397,6 @@
 </head>
 
 <body>
-  <!-- Top title (like the reference image) -->
   <div class="page-top">
     <div class="mark" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none">
@@ -391,7 +409,6 @@
 
   <div class="wrap">
     <main class="card">
-      <!-- HERO -->
       <section class="hero">
         <div class="hero-topbar">
           <div class="brand">Ilario</div>
@@ -399,7 +416,9 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a class="cta" href="#contact">
+
+            <!-- now opens mail -->
+            <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
               Get in touch
               <span class="dot" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -433,7 +452,6 @@
         </div>
       </section>
 
-      <!-- LOGO STRIP -->
       <section class="strip">
         <div class="trust">Trusted by Brands I’ve helped shape</div>
         <div class="logos" aria-label="Brand logos">
@@ -444,7 +462,6 @@
         </div>
       </section>
 
-      <!-- CONTENT -->
       <section class="content" id="about">
         <div class="content-grid">
           <div>
@@ -472,11 +489,28 @@
           </div>
         </div>
 
+        <!-- works are now buttons/links -->
         <div class="works" id="projects">
-          <div class="work one" title="Work 1"></div>
-          <div class="work two" title="Work 2"></div>
-          <div class="work three" title="Work 3"></div>
+          <a class="work one" href="#work-1" aria-label="Go to Work 1"></a>
+          <a class="work two" href="#work-2" aria-label="Go to Work 2"></a>
+          <a class="work three" href="#work-3" aria-label="Go to Work 3"></a>
         </div>
+      </section>
+
+      <!-- Work sections -->
+      <section class="work-section" id="work-1">
+        <h3>Work 1</h3>
+        <p>Qui inserisci descrizione, software usati, obiettivo del progetto, e immagini extra se vuoi.</p>
+      </section>
+
+      <section class="work-section" id="work-2">
+        <h3>Work 2</h3>
+        <p>Descrizione del progetto 2…</p>
+      </section>
+
+      <section class="work-section" id="work-3">
+        <h3>Work 3</h3>
+        <p>Descrizione del progetto 3…</p>
       </section>
     </main>
   </div>
