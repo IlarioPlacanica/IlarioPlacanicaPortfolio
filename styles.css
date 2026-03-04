@@ -520,6 +520,28 @@ body {
   pointer-events: none; /* click passa al bottone overlay (apre lightbox) */
 }
 
+/* =========================
+   WORK 2: video verticale (telefono)
+   ========================= */
+#work-2 .mid-visual{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#work-2 .mid-visual .mid-video{
+  /* mostra tutto il video senza crop */
+  object-fit: contain;
+
+  /* lo rende “telefono” e non gigante */
+  width: auto;
+  height: 100%;
+  max-width: clamp(260px, 26vw, 440px);
+
+  /* opzionale: evita che tocchi i bordi */
+  margin: 0 auto;
+}
+
 /* button overlay used to open lightbox */
 .mid-open{
   position: absolute;
