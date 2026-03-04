@@ -414,40 +414,39 @@ body {
 }
 .cta.dark .dot{ background: rgba(255,90,31,.95); }
 
-/* ✅ SOFTWARE BOXES smaller */
+/* SOFTWARE ICON BOXES (square, icon-only, bigger icon) */
 .stats{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 10px;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 12px;
 }
+
+/* square box */
 .stat{
+  width: 64px;
+  height: 64px;
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
   border: 1px solid rgba(255,255,255,.10);
-  padding: 10px 10px 9px;
   box-shadow: 0 10px 26px rgba(0,0,0,.28);
-  min-height: 72px;
 
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  text-align:center;
+  display:grid;
+  place-items:center;
+  padding: 10px;
 }
+
+/* bigger icon */
 .tool-icon{
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
 }
+
+/* hide the text if it exists */
 .tool-name{
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: .2px;
-  color: rgba(255,255,255,.82);
-  line-height: 1.15;
+  display:none;
 }
 
 .project-media{
