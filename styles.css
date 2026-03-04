@@ -492,6 +492,52 @@ body {
   background: rgba(0,0,0,.25);
   pointer-events: none;     /* click apre lightbox */
 }
+/* =========================
+   WORK 1 Vimeo inside mid-visual
+   ========================= */
+.mid-visual.vimeo-mid{
+  cursor: pointer;
+}
+
+.vimeo{
+  width: 100%;
+  height: 100%;
+  min-height: 388px; /* 420 - padding(16*2) */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+  position: relative;
+}
+
+/* iframe full size */
+.vimeo iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none; /* click passa al bottone overlay (apre lightbox) */
+}
+
+/* button overlay used to open lightbox */
+.mid-open{
+  position: absolute;
+  inset: 16px;          /* dentro il padding della mid-visual */
+  border: 0;
+  background: transparent;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.mid-open:focus-visible{
+  outline: 2px solid rgba(255,90,31,.85);
+  outline-offset: 3px;
+}
+
+@media (max-width: 980px){
+  .vimeo{ min-height: 288px; } /* 320 - padding(16*2) */
+}
 
 /* (lasciamo queste, non danno fastidio se un giorno usi img) */
 .mid-visual img{
@@ -756,14 +802,16 @@ body.lb-open{ overflow: hidden; }
   overflow: visible;
 }
 
+/* prima avevi solo img, video */
 .lightbox img,
-.lightbox video{
+.lightbox video,
+.lightbox iframe{
   width: 100%;
   height: min(86vh, 900px);
   object-fit: contain;
   display: block;
   border-radius: 16px;
-  border: none;                 /* no double border */
+  border: none;
   background: rgba(0,0,0,.18);
 }
 
