@@ -382,6 +382,14 @@ body {
   margin: 12px 0 16px;
 }
 
+/* Accent background for selected projects (Work 1 + Work 3) */
+.project.project-accent{
+  background:
+    radial-gradient(700px 520px at 12% 12%, rgba(255,170,110,.35), rgba(255,170,110,0) 55%),
+    radial-gradient(700px 520px at 72% 18%, rgba(0,0,0,.55), rgba(0,0,0,0) 65%),
+    linear-gradient(135deg, #ff6a2a 0%, #ff3a2e 40%, #3a0b1e 100%);
+}
+
 .cta.dark{
   background: rgba(255,255,255,.10);
   color: rgba(255,255,255,.92);
