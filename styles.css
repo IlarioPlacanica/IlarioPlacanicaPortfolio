@@ -536,7 +536,7 @@ body {
   /* lo rende “telefono” e non gigante */
   width: auto;
   height: 100%;
-  max-width: clamp(260px, 26vw, 440px);
+  max-width: clamp(240px, 22vw, 360px);
 
   /* opzionale: evita che tocchi i bordi */
   margin: 0 auto;
