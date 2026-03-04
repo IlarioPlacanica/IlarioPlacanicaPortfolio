@@ -414,7 +414,7 @@ body {
 }
 .cta.dark .dot{ background: rgba(255,90,31,.95); }
 
-/* SOFTWARE ICON BOXES (square, icon-only, bigger icon) */
+/* SOFTWARE ICON BOXES */
 .stats{
   display:flex;
   gap: 12px;
@@ -460,11 +460,12 @@ body {
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
 
+/* ✅ MID SECTION now for VIDEO (bigger + clickable) */
 .project-mid{
   margin-top: 18px;
   display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 16px;
+  grid-template-columns: 1.35fr .75fr;
+  gap: 18px;
   align-items: start;
 }
 
@@ -474,10 +475,25 @@ body {
   background: radial-gradient(900px 420px at 20% 20%, rgba(255,90,31,.18), rgba(255,90,31,0) 55%),
               linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
   padding: 16px;
-  min-height: 260px;
+  min-height: 420px;
   overflow:hidden;
   position: relative;
+  cursor: pointer;
 }
+
+.mid-visual .mid-video{
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;        /* cambia in contain se vuoi zero crop */
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  display:block;
+  background: rgba(0,0,0,.25);
+  pointer-events: none;     /* click apre lightbox */
+}
+
+/* (lasciamo queste, non danno fastidio se un giorno usi img) */
 .mid-visual img{
   width: 100%;
   height: 100%;
@@ -569,26 +585,20 @@ body {
   gap: 14px;
 }
 
-/* ✅ GALLERY ITEM (fills box + taller, less crop) */
+/* GALLERY ITEM */
 .catalog-item{
-  height: 320px;                 /* 🔥 più alto = meno crop */
+  height: 320px;
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.10);
   background-color: rgba(0,0,0,.25);
   overflow:hidden;
   position: relative;
-
-  /* ✅ fill the box */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  /* hover like previews */
   transition: transform .25s ease, box-shadow .25s ease;
   transform: translateZ(0);
   cursor: pointer;
-
-  /* button reset */
   padding: 0;
   appearance: none;
   -webkit-appearance: none;
@@ -605,13 +615,8 @@ body {
   outline-offset: 3px;
 }
 
-/* responsive heights so it stays nice */
-@media (max-width: 980px){
-  .catalog-item{ height: 260px; }
-}
-@media (max-width: 480px){
-  .catalog-item{ height: 220px; }
-}
+@media (max-width: 980px){ .catalog-item{ height: 260px; } }
+@media (max-width: 480px){ .catalog-item{ height: 220px; } }
 
 .catalog-item::after{
   content:"";
@@ -723,7 +728,7 @@ body {
 }
 
 /* =========================
-   LIGHTBOX (no double border + arrows outside image)
+   LIGHTBOX (images + videos)
    ========================= */
 body.lb-open{ overflow: hidden; }
 
@@ -739,15 +744,27 @@ body.lb-open{ overflow: hidden; }
 }
 .lightbox.open{ display: flex; }
 
-/* ✅ add side padding so arrows sit OUTSIDE the image */
-
 .lightbox-inner{
-  width: min(1400px, 96vw);   /* prima 1100px */
-  padding: 18px 92px;        /* più spazio laterale, frecce sempre fuori */
+  width: min(1400px, 96vw);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(12,12,13,.88);
+  box-shadow: 0 30px 90px rgba(0,0,0,.65);
+  padding: 18px 92px;     /* spazio laterale per frecce */
+  position: relative;
+  backdrop-filter: blur(10px);
+  overflow: visible;
 }
 
-.lightbox img{
-  height: min(86vh, 900px);  /* prima 78vh / 740px */
+.lightbox img,
+.lightbox video{
+  width: 100%;
+  height: min(86vh, 900px);
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  border: none;                 /* no double border */
+  background: rgba(0,0,0,.18);
 }
 
 /* arrows */
@@ -764,11 +781,9 @@ body.lb-open{ overflow: hidden; }
   place-items: center;
   cursor: pointer;
   backdrop-filter: blur(8px);
-  z-index: 5; /* ✅ above image */
+  z-index: 5;
 }
 .lb-btn:hover{ background: rgba(255,255,255,.16); }
-
-/* ✅ arrows are OUTSIDE image (in the side padding area) */
 .lb-prev{ left: 18px; }
 .lb-next{ right: 18px; }
 
@@ -794,16 +809,18 @@ body.lb-open{ overflow: hidden; }
   height: 18px;
 }
 
-/* on small screens reduce side padding so it fits */
 @media (max-width: 680px){
   .lightbox-inner{ padding: 14px 54px; }
   .lb-prev{ left: 12px; }
   .lb-next{ right: 12px; }
 }
 
+/* responsive */
 @media (max-width: 980px){
   .project-hero{ grid-template-columns: 1fr; }
   .project-mid{ grid-template-columns: 1fr; }
+  .mid-visual{ min-height: 320px; }
+  .mid-visual .mid-video{ min-height: 320px; }
   .catalog-grid{ grid-template-columns: repeat(2, 1fr); }
   .pay-grid{ grid-template-columns: repeat(2, 1fr); }
   .steps-grid{ grid-template-columns: 1fr; }
