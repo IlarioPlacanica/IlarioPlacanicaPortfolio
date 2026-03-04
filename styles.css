@@ -837,6 +837,17 @@ body.lb-open{ overflow: hidden; }
   background: rgba(0,0,0,.18);
 }
 
+/* ✅ Marzipano tour iframe in lightbox */
+#lbFrame.is-tour{
+  height: min(88vh, 940px);
+  background: #000;
+}
+
+/* (opzionale) Vimeo iframe */
+#lbFrame.is-vimeo{
+  height: min(86vh, 900px);
+}
+
 /* arrows */
 .lb-btn{
   position: absolute;
