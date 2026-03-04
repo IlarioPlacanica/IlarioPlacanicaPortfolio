@@ -740,28 +740,14 @@ body.lb-open{ overflow: hidden; }
 .lightbox.open{ display: flex; }
 
 /* ✅ add side padding so arrows sit OUTSIDE the image */
-.lightbox-inner{
-  width: min(1100px, 94vw);
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(12,12,13,.88);
-  box-shadow: 0 30px 90px rgba(0,0,0,.65);
 
-  padding: 16px 74px;   /* 🔥 space left/right for arrows */
-  position: relative;
-  backdrop-filter: blur(10px);
-  overflow: visible;    /* ✅ make sure arrows are visible */
+.lightbox-inner{
+  width: min(1400px, 96vw);   /* prima 1100px */
+  padding: 18px 92px;        /* più spazio laterale, frecce sempre fuori */
 }
 
-/* ✅ remove double border: keep only container border */
 .lightbox img{
-  width: 100%;
-  height: min(78vh, 740px);
-  object-fit: contain;
-  display: block;
-  border-radius: 16px;
-  border: none;               /* ✅ no border here */
-  background: rgba(0,0,0,.18);
+  height: min(86vh, 900px);  /* prima 78vh / 740px */
 }
 
 /* arrows */
