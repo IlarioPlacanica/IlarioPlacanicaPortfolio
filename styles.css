@@ -309,47 +309,51 @@ body {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-}
-
-.works{
-  margin-top: 22px;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  position: relative; /* ✅ unito qui (prima era in un secondo .works{}) */
+  position: relative;
 }
 
 /* =========================
    WORKS CATEGORY BARS (2 + 1)
+   - barra più bassa
+   - testo sopra (non dentro)
    ========================= */
 .work-tags{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 2fr 1fr; /* 2 preview + 1 preview */
+  grid-template-columns: 2fr 1fr; /* copre work-1+2 e work-3 */
   gap: 16px;
   margin-bottom: 12px;
 }
 
 .work-tag{
-  height: 34px;
+  position: relative;
+  height: 10px;                 /* ✅ più bassa */
   border-radius: 999px;
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  color: rgba(255,255,255,.92);
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.22);
-  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.18);
   backdrop-filter: blur(10px);
 }
 
-.work-tag.arch{
-  background: linear-gradient(90deg, rgba(47,217,255,.35), rgba(43,107,255,.35));
+/* ✅ testo sopra la barra */
+.work-tag span{
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);     /* distanza sopra la barra */
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.92);
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
+/* ✅ ARCH = gradient sul verde */
+.work-tag.arch{
+  background: linear-gradient(90deg, rgba(0,255,170,.45), rgba(0,170,90,.45));
+}
+
+/* ✅ CHAR = lascio viola/rosa come prima */
 .work-tag.char{
   background: linear-gradient(90deg, rgba(255,79,216,.35), rgba(123,60,255,.35));
 }
