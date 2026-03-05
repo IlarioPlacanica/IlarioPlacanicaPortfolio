@@ -315,57 +315,58 @@ body {
 /* =========================
    WORKS CATEGORY BARS (2 + 1)
    - barra bassa
-   - testo sopra (non dentro)
+   - testo sopra la barra (sempre)
    ========================= */
 .work-tags{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 2fr 1fr; /* copre work-1+2 e work-3 */
+  grid-template-columns: 2fr 1fr;
   gap: 16px;
-  margin-bottom: 10px;
-  overflow: visible;
+  margin-bottom: 12px;
 }
 
 .work-tag{
   position: relative;
-  height: 10px;                 /* ✅ meno alta */
+  height: 7px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.22);
   box-shadow: 0 10px 26px rgba(0,0,0,.18);
   backdrop-filter: blur(10px);
-  overflow: visible;
 }
 
-/* ✅ testo SOPRA la barra */
-.work-tag span{
+/* ✅ testo sopra (non dentro) */
+.work-tag::before{
+  content: attr(data-label);
   position: absolute;
   left: 0;
-  bottom: calc(100% + 6px);
+  bottom: calc(100% + 8px);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .2px;
   color: rgba(255,255,255,.92);
   text-transform: uppercase;
   white-space: nowrap;
-  pointer-events: none;
 }
 
 /* ✅ ARCH = verde */
 .work-tag.arch{
-  background: linear-gradient(90deg, rgba(0,255,170,.55), rgba(0,170,90,.55));
+  background: linear-gradient(90deg, rgba(0,255,170,.45), rgba(0,170,90,.45));
 }
 
-/* ✅ CHAR = viola */
+/* ✅ CHAR = viola/rosa */
 .work-tag.char{
-  background: linear-gradient(90deg, rgba(255,79,216,.40), rgba(123,60,255,.45));
+  background: linear-gradient(90deg, rgba(255,79,216,.35), rgba(123,60,255,.35));
 }
 
-/* responsive: quando le preview diventano 1 colonna */
+/* responsive: quando le preview diventano 1 colonna, le barre diventano 2 righe */
 @media (max-width: 860px){
-  .works{ grid-template-columns: 1fr; }
-  .work-tags{ grid-template-columns: 1fr; margin-bottom: 14px; }
+  .work-tags{
+    grid-template-columns: 1fr;
+    margin-bottom: 14px;
+  }
 }
+
 .work{
   display:block;
   text-decoration:none;
