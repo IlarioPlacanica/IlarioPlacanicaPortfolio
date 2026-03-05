@@ -314,20 +314,20 @@ body {
 
 /* =========================
    WORKS CATEGORY BARS (2 + 1)
-   - barra più bassa
-   - testo sopra (non dentro)
+   - barra bassa
+   - testo sopra la barra (sempre)
    ========================= */
 .work-tags{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 2fr 1fr; /* copre work-1+2 e work-3 */
+  grid-template-columns: 2fr 1fr;
   gap: 16px;
   margin-bottom: 12px;
 }
 
 .work-tag{
   position: relative;
-  height: 5px;                 /* ✅ più bassa */
+  height: 7px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.22);
@@ -335,11 +335,12 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* ✅ testo sopra la barra */
-.work-tag span{
+/* ✅ testo sopra (non dentro) */
+.work-tag::before{
+  content: attr(data-label);
   position: absolute;
   left: 0;
-  bottom: calc(100% + 15px);     /* distanza sopra la barra */
+  bottom: calc(100% + 8px);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .2px;
@@ -348,12 +349,12 @@ body {
   white-space: nowrap;
 }
 
-/* ✅ ARCH = gradient sul verde */
+/* ✅ ARCH = verde */
 .work-tag.arch{
   background: linear-gradient(90deg, rgba(0,255,170,.45), rgba(0,170,90,.45));
 }
 
-/* ✅ CHAR = lascio viola/rosa come prima */
+/* ✅ CHAR = viola/rosa */
 .work-tag.char{
   background: linear-gradient(90deg, rgba(255,79,216,.35), rgba(123,60,255,.35));
 }
