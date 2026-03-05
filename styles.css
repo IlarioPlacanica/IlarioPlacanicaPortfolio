@@ -460,12 +460,12 @@ body {
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
 
-/* ✅ MID SECTION (stesse dimensioni di prima) */
+/* ✅ Allinea la divisione colonne del MID a quella dell'hero */
 .project-mid{
   margin-top: 18px;
-  display:grid;
-  grid-template-columns: 1.35fr .75fr;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;  /* <-- uguale a .project-hero */
+  gap: 18px;                          /* <-- uguale a .project-hero */
   align-items: start;
 }
 
