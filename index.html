@@ -131,30 +131,21 @@
 
           <div class="project-media bg1" aria-label="Work 1 main image"></div>
         </div>
-        
-        <div class="project-mid">
-            <!-- ✅ WORK 1: local mp4 (click opens lightbox) -->
-            <div class="mid-visual"
-                 role="button" tabindex="0"
-                 data-gallery="work-1-final"
-                 data-src="assets/video/work-1-final.mp4"
-                 data-label="Work 1 • Final video">
-            
-              <!-- FILE VIDEO:
-                   assets/video/work-1-final.mp4 -->
-              <video class="mid-video" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/video/work-1-final.mp4" type="video/mp4">
-              </video>
-            </div>
 
-            <!-- Click overlay (this is what opens the lightbox) -->
-            <button class="mid-open"
-              type="button"
-              aria-label="Open Work 1 video"
-              data-gallery="work-1-final"
-              data-src="vimeo:1169865397"
-              data-label="Work 1 • Final video">
-            </button>
+        <div class="project-mid">
+          <!-- ✅ WORK 1: local mp4 (click opens lightbox) -->
+          <div class="mid-visual"
+               role="button" tabindex="0"
+               data-gallery="work-1-final"
+               data-src="assets/video/work-1-final.mp4"
+               data-label="Work 1 • Final video">
+
+            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
+              <source src="assets/video/work-1-final.mp4" type="video/mp4">
+            </video>
+
+            <!-- overlay (keeps clicks clean; NO data-src here to avoid duplicate items) -->
+            <button class="mid-open" type="button" aria-label="Open Work 1 video"></button>
           </div>
 
           <div class="features">
@@ -253,7 +244,6 @@
                data-gallery="work-2-final"
                data-src="assets/video/work-2-final.mp4"
                data-label="Work 2 • Final video">
-            <!-- UPLOAD VIDEO: assets/video/work-2-final.mp4 -->
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-2-final.mp4" type="video/mp4">
             </video>
@@ -349,7 +339,6 @@
                data-gallery="work-3-final"
                data-src="assets/video/work-3-final.mp4"
                data-label="Work 3 • Final video">
-            <!-- UPLOAD VIDEO: assets/video/work-3-final.mp4 -->
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-3-final.mp4" type="video/mp4">
             </video>
@@ -443,67 +432,54 @@
     const lbClose = document.getElementById("lbClose");
     const lbPrev = document.getElementById("lbPrev");
     const lbNext = document.getElementById("lbNext");
-  
-    // include gallery buttons + mid videos + mid-open overlay
+
     const items = Array.from(document.querySelectorAll("[data-src][data-gallery]"));
     const galleries = new Map();
-  
+
     items.forEach((el) => {
       const g = el.dataset.gallery || "default";
       if (!galleries.has(g)) galleries.set(g, []);
       galleries.get(g).push(el);
     });
-  
+
     let currentGallery = null;
     let currentIndex = 0;
-  
+
     function isVideoSrc(src){
       const s = (src || "").toLowerCase();
       return s.endsWith(".mp4") || s.endsWith(".webm");
     }
-    function isVimeo(src){
-      return (src || "").startsWith("vimeo:");
-    }
     function isTour(src){
       return (src || "").startsWith("tour:");
     }
-  
-    function vimeoUrlFromSrc(src){
-      const id = src.replace("vimeo:", "").trim();
-      return `https://player.vimeo.com/video/${id}?badge=0&autopause=0&autoplay=1&loop=1&muted=1`;
-    }
+
     function tourUrlFromSrc(src){
-      // src tipo: "tour:assets/tour/work-2/index.html"
       return src.replace("tour:", "").trim();
     }
-  
+
     function updateNav(){
       const arr = galleries.get(currentGallery) || [];
       const show = arr.length > 1;
       lbPrev.style.display = show ? "grid" : "none";
       lbNext.style.display = show ? "grid" : "none";
     }
-  
+
     function resetMedia(){
-      // image
       lbImg.style.display = "none";
       lbImg.src = "";
-  
-      // video
+
       lbVid.pause();
       lbVid.style.display = "none";
       lbVid.src = "";
-  
-      // iframe (vimeo / tour)
-      lbFrame.classList.remove("is-vimeo", "is-tour");
+
+      lbFrame.classList.remove("is-tour");
       lbFrame.style.display = "none";
       lbFrame.src = "";
     }
-  
+
     function showMedia(src, label){
       resetMedia();
-  
-      // ✅ MARZIPANO TOUR
+
       if (isTour(src)) {
         lbFrame.style.display = "block";
         lbFrame.classList.add("is-tour");
@@ -511,17 +487,7 @@
         lbFrame.setAttribute("title", label || "360 Tour");
         return;
       }
-  
-      // ✅ VIMEO
-      if (isVimeo(src)) {
-        lbFrame.style.display = "block";
-        lbFrame.classList.add("is-vimeo");
-        lbFrame.src = vimeoUrlFromSrc(src);
-        lbFrame.setAttribute("title", label || "Vimeo video");
-        return;
-      }
-  
-      // ✅ LOCAL VIDEO
+
       if (isVideoSrc(src)) {
         lbVid.style.display = "block";
         lbVid.src = src;
@@ -529,59 +495,58 @@
         lbVid.play().catch(()=>{});
         return;
       }
-  
-      // ✅ IMAGE
+
       lbImg.style.display = "block";
       lbImg.src = src;
       lbImg.alt = label || "Image";
     }
-  
+
     function openLightbox(galleryKey, index){
       currentGallery = galleryKey;
       currentIndex = index;
-  
+
       const arr = galleries.get(currentGallery) || [];
       const el = arr[currentIndex];
       if (!el) return;
-  
+
       const src = el.dataset.src;
       const label =
         el.dataset.label ||
         el.querySelector(".label")?.textContent?.trim() ||
         "Media";
-  
+
       showMedia(src, label);
-  
+
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.classList.add("lb-open");
       updateNav();
     }
-  
+
     function closeLightbox(){
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.classList.remove("lb-open");
       resetMedia();
     }
-  
+
     function go(delta){
       const arr = galleries.get(currentGallery) || [];
       if (!arr.length) return;
-  
+
       currentIndex = (currentIndex + delta + arr.length) % arr.length;
       const el = arr[currentIndex];
-  
+
       const src = el.dataset.src;
       const label =
         el.dataset.label ||
         el.querySelector(".label")?.textContent?.trim() ||
         "Media";
-  
+
       showMedia(src, label);
       updateNav();
     }
-  
+
     items.forEach((el) => {
       el.addEventListener("click", () => {
         const g = el.dataset.gallery || "default";
@@ -589,7 +554,7 @@
         const idx = arr.indexOf(el);
         openLightbox(g, Math.max(0, idx));
       });
-  
+
       el.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -597,15 +562,15 @@
         }
       });
     });
-  
+
     lbClose.addEventListener("click", closeLightbox);
     lbPrev.addEventListener("click", () => go(-1));
     lbNext.addEventListener("click", () => go(+1));
-  
+
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLightbox();
     });
-  
+
     document.addEventListener("keydown", (e) => {
       if (!lightbox.classList.contains("open")) return;
       if (e.key === "Escape") closeLightbox();
