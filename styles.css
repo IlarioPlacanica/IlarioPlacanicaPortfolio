@@ -341,8 +341,8 @@ body {
   position: absolute;
   left: 0;
   bottom: calc(100% + 8px);
-  font-size: 12px;
-  font-weight: 900;
+  font-size: 21px;
+  font-weight: 500;
   letter-spacing: .2px;
   color: rgba(255,255,255,.92);
   text-transform: uppercase;
@@ -351,7 +351,7 @@ body {
 
 /* ✅ ARCH = verde */
 .work-tag.arch{
-  background: linear-gradient(90deg, rgba(0,255,170,.45), rgba(0,170,90,.45));
+  background: linear-gradient(135deg, rgba(255,106,42,.45), rgba(255,58,46,.45), rgba(58,11,30,.45));
 }
 
 /* ✅ CHAR = viola/rosa */
