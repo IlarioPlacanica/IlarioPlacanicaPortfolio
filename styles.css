@@ -327,7 +327,7 @@ body {
 
 .work-tag{
   position: relative;
-  height: 10px;                 /* ✅ più bassa */
+  height: 5px;                 /* ✅ più bassa */
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.22);
@@ -339,7 +339,7 @@ body {
 .work-tag span{
   position: absolute;
   left: 0;
-  bottom: calc(100% + 8px);     /* distanza sopra la barra */
+  bottom: calc(100% + 15px);     /* distanza sopra la barra */
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .2px;
