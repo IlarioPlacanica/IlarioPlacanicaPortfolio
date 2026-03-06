@@ -628,7 +628,7 @@ body{
 .project-media.bg1{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
-.project-media.bg3{ background-image: url("assets/img/work-4.jpg"); background-size: cover; background-position: center; }
+.project-media.bg4{ background-image: url("assets/img/work-4.jpg"); background-size: cover; background-position: center; }
 
 /* Allinea MID a HERO */
 .project-mid{
