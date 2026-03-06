@@ -856,91 +856,59 @@ body{
   font-size: 10px;
 }
 
-/* PAY */
-.pay{ margin-top: 18px; }
-.pay h3{
-  margin: 0 0 12px;
-  text-align:center;
-  font-size: 18px;
-  letter-spacing: -.2px;
-}
-.pay-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.pay-card{
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  padding: 14px;
-  min-height: 120px;
-  position: relative;
-}
-.pay-card strong{
-  display:block;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-.pay-card p{
-  margin:0;
-  color: rgba(255,255,255,.65);
-  font-size: 11px;
-  line-height: 1.45;
-}
-/* primary ora b/n */
-.pay-card.primary{
-  background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.16);
-}
-
 /* STEPS */
 .steps{
-  margin-top: 18px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  padding: 18px;
+  margin-top: 24px;                     /* più respiro sopra */
+  border-radius: 26px;                  /* box più “premium” */
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  padding: 26px;                         /* ✅ più grande */
 }
+
 .steps h3{
-  margin: 0 0 12px;
-  font-size: 18px;
-  letter-spacing: -.2px;
+  margin: 0 0 18px;
+  font-size: 24px;                       /* ✅ titolo più grande */
+  letter-spacing: -.3px;
 }
+
 .steps-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;                             /* ✅ più spazio tra cards */
 }
+
 .step{
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.08);
-  background: rgba(0,0,0,.20);
-  padding: 14px;
+  border-radius: 22px;                   /* ✅ cards più grandi */
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  padding: 18px;                         /* ✅ più grande */
+  min-height: 150px;                     /* ✅ più “corpo” alla card */
   position: relative;
   overflow:hidden;
 }
+
 .step .big{
   position:absolute;
-  top: 10px;
+  top: 8px;
   right: 12px;
   font-weight: 900;
-  font-size: 38px;
-  color: rgba(255,255,255,.08);
+  font-size: 52px;                       /* ✅ numero più grande */
+  color: rgba(255,255,255,.09);
   letter-spacing: -2px;
 }
+
 .step strong{
   display:block;
-  font-size: 12px;
-  margin-bottom: 6px;
+  font-size: 14px;                       /* ✅ titolo step più grande */
+  margin-bottom: 8px;
 }
+
 .step p{
   margin:0;
-  color: rgba(255,255,255,.65);
-  font-size: 11px;
-  line-height: 1.45;
-  max-width: 46ch;
+  color: rgba(255,255,255,.70);
+  font-size: 12px;                       /* ✅ testo più grande */
+  line-height: 1.55;
+  max-width: 60ch;                       /* ✅ meno “stretto” */
 }
 
 /* =========================
