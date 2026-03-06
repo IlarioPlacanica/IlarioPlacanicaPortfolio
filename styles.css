@@ -357,10 +357,16 @@ body{
 .works{
   margin-top: 18px;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 colonne */
   gap: 16px;
   position: relative;
 }
+
+/* ✅ forza la disposizione in griglia 2x2 */
+.work.one{ grid-column: 1; grid-row: 2; }
+.work.two{ grid-column: 1; grid-row: 3; }
+.work.three{ grid-column: 2; grid-row: 2; }
+.work.four{ grid-column: 2; grid-row: 3; }
 
 /* =========================
    WORK CATEGORY BARS + LABELS + CTA (CTA SOPRA)
@@ -492,6 +498,7 @@ body{
 .work.one{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
 .work.two{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .work.three{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
+.work.four{ background-image: url("assets/img/work-4.jpg"); background-size: cover; background-position: center; }
 
 .work::after{
   content:"";
