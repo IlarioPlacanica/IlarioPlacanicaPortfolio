@@ -694,6 +694,27 @@ body{
   background-origin: content-box;
   background-clip: content-box;
   background-repeat: no-repeat;
+
+  /* ✅ aggiunte per hover */
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ✅ Hover solo su dispositivi con hover (desktop) */
+@media (hover:hover){
+  .mid-visual:hover{
+    transform: scale(1.03);
+    box-shadow: 0 18px 45px rgba(0,0,0,.45);
+    border-color: rgba(255,255,255,.16);
+    z-index: 2;
+  }
+}
+
+/* ✅ Focus tastiera (TAB) */
+.mid-visual:focus-visible{
+  outline: 2px solid rgba(255,255,255,.75);
+  outline-offset: 4px;
 }
 
 .mid-visual .mid-video{
