@@ -459,7 +459,7 @@ body{
   background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(255,255,255,.30));
 }
 .work-tag.char{
-  background: linear-gradient(90deg, rgba(255,255,255,.22), rgba(0,0,0,.40));
+  background: linear-gradient(90deg, rgba(0,0,0,.40), rgba(255,255,255,.22));
 }
 
 /* =========================
