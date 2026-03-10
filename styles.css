@@ -135,7 +135,7 @@ body{
 
 .brand{
   font-weight: 700;
-  font-size: 14px;
+  font-size: 21px;
   opacity: .9;
 }
 
@@ -148,7 +148,7 @@ body{
 .hero-nav a{
   color: rgba(255,255,255,.80);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 21px;
   transition: opacity .2s;
 }
 .hero-nav a:hover{ opacity: 1; }
