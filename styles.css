@@ -130,7 +130,7 @@ body{
   display:flex;
   align-items:center;
   justify-content: space-between;
-  gap: 17px;
+  gap: 14px;
 }
 
 .brand{
@@ -142,7 +142,7 @@ body{
 .hero-nav{
   display:flex;
   align-items:center;
-  gap: 16px;
+  gap: 21px;
 }
 
 .hero-nav a{
