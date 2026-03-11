@@ -902,36 +902,36 @@ body{
     align-items: start;
 }
 
-    .step .big {
-        grid-area: num;
-        position: static;
-        justify-self: end;
-        align-self: start;
-        margin: 0;
-        font-weight: 900;
-        font-size: 76px;
-        line-height: .9;
-        color: rgba(255,255,255,.09);
-        letter-spacing: -2px;
-    }
+.step .big {
+    grid-area: num;
+    position: static;
+    justify-self: end;
+    align-self: start;
+    margin: 0;
+    font-weight: 900;
+    font-size: 76px;
+    line-height: .9;
+    color: rgba(255,255,255,.09);
+    letter-spacing: -2px;
+}
 
-    .step strong {
-        grid-area: title;
-        display: block;
-        margin: 0;
-        font-size: 22px;
-        line-height: 1.25;
-    }
+.step strong {
+    grid-area: title;
+    display: block;
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.25;
+}
 
-    .step p {
-        grid-area: desc;
-        margin: 0;
-        color: rgba(255,255,255,.72);
-        font-size: 16px;
-        line-height: 1.75;
-        text-align: justify;
-        max-width: none;
-    }
+.step p {
+     grid-area: desc;
+     margin: 0;
+     color: rgba(255,255,255,.72);
+     font-size: 16px;
+     line-height: 1.75;
+     text-align: justify;
+     max-width: none;
+}
 
 body.lb-open{ overflow: hidden; }
 
