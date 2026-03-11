@@ -189,7 +189,7 @@ body{
 }
 
 .hero-left .kicker{
-  font-size: 25px;
+  font-size: 17px;
   color: rgba(255,255,255,.90);
   margin-bottom: 8px;
 }
@@ -315,7 +315,7 @@ body{
 .section-kicker {
     color: rgba(255,255,255,.78);
     font-weight: 800;
-    font-size: 12px;
+    font-size: 17px;
     margin-bottom: 10px;
 }
 
