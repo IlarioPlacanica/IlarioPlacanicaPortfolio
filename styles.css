@@ -212,13 +212,13 @@ body{
 }
 .hero-right h3{
   margin: 0 0 10px;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.25;
 }
 .hero-right p{
   margin: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.55;
 }
 
@@ -263,7 +263,7 @@ body{
 }
 
 .strip .trust{
-  font-size: 14px;
+  font-size: 17px;
   color: rgba(255,255,255,.62);
   margin-right: auto;
   max-width: 260px;
@@ -281,7 +281,7 @@ body{
     align-items: center;
     gap: 8px;
     color: rgba(255,255,255,.75);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 700;
     opacity: .9;
     text-decoration: none;
