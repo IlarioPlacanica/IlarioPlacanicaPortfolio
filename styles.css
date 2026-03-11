@@ -879,45 +879,59 @@ body{
   letter-spacing: -.3px;
 }
 
-.steps-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
 }
 
-.step{
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
-  padding: 18px;
-  min-height: 150px;
-  position: relative;
-  overflow:hidden;
+.step {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    grid-template-areas:
+        "title num"
+        "desc  num";
+    column-gap: 18px;
+    row-gap: 10px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(0,0,0,.18);
+    padding: 20px;
+    min-height: 210px;
+    overflow: hidden;
+    align-items: start;
 }
 
-.step .big{
-  position:absolute;
-  top: 8px;
-  right: 12px;
-  font-weight: 900;
-  font-size: 52px;
-  color: rgba(255,255,255,.09);
-  letter-spacing: -2px;
-}
+    .step .big {
+        grid-area: num;
+        position: static;
+        justify-self: end;
+        align-self: start;
+        margin: 0;
+        font-weight: 900;
+        font-size: 76px;
+        line-height: .9;
+        color: rgba(255,255,255,.09);
+        letter-spacing: -2px;
+    }
 
-.step strong{
-  display:block;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
+    .step strong {
+        grid-area: title;
+        display: block;
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.25;
+    }
 
-.step p{
-  margin:0;
-  color: rgba(255,255,255,.70);
-  font-size: 12px;
-  line-height: 1.55;
-  max-width: 60ch;
-}
+    .step p {
+        grid-area: desc;
+        margin: 0;
+        color: rgba(255,255,255,.72);
+        font-size: 16px;
+        line-height: 1.75;
+        text-align: justify;
+        max-width: none;
+    }
 
 body.lb-open{ overflow: hidden; }
 
