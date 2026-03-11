@@ -189,7 +189,7 @@ body{
 }
 
 .hero-left .kicker{
-  font-size: 14px;
+  font-size: 17px;
   color: rgba(255,255,255,.90);
   margin-bottom: 8px;
 }
@@ -274,18 +274,15 @@ body{
   flex-wrap: wrap;
 }
 
-.logo-chip{
-  display:flex;
-  align-items:center;
-  gap: 8px;
-  color: rgba(255,255,255,.75);
-  font-size: 14px;
-  font-weight: 700;
-  opacity: .9;
-}
-
-.logo-chip:visited {
-        color: rgba(255,255,255,.75);
+.logo-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,.75);
+    font-size: 14px;
+    font-weight: 700;
+    opacity: .9;
+    text-decoration: none;
 }
 
 .logo-chip:hover {
