@@ -17,12 +17,12 @@
 
 html{ scroll-behavior: smooth; }
 
-@font-face{
-  font-family: "FUTURACYRILLICBOLD";
-  src: url("assets/fonts/FUTURACYRILLICBOLD.TTF") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+@font-face {
+    font-family: "FUTURACYRILLICDEMI";
+    src: url("assets/fonts/FUTURACYRILLICDEMI.TTF") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 *{ box-sizing: border-box; }
@@ -66,15 +66,15 @@ body{
 }
 .mark svg{ width: 22px; height: 22px; opacity: .95; }
 
-.page-title{
-  font-family: "FUTURACYRILLICBOLD", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  margin: 0;
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
+.page-title {
+    font-family: "FUTURACYRILLICDEMI", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin: 0;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .wrap{
