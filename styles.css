@@ -305,11 +305,12 @@ body{
   padding-bottom: 14px;
 }
 
-.section-kicker{
-  color: rgba(255,255,255,.78);
-  font-weight: 800;
-  font-size: 12px;
-  margin-bottom: 10px;
+.section-kicker {
+    color: rgba(255,255,255,.78);
+    font-weight: 800;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
 .content h2{
