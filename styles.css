@@ -310,7 +310,6 @@ body{
     font-weight: 800;
     font-size: 12px;
     margin-bottom: 10px;
-    text-align: justify;
 }
 
 .content h2{
@@ -498,12 +497,13 @@ body{
   letter-spacing: -0.4px;
 }
 
-.project-sub{
-  margin: 0 0 14px;
-  color: rgba(255,255,255,.75);
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 68ch;
+.project-sub {
+    margin: 0 0 14px;
+    color: rgba(255,255,255,.75);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 68ch;
+    text-align: justify;
 }
 
 .project-actions{
