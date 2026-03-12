@@ -54,6 +54,12 @@ body{
 
 .mark {
     font-family: "FUTURACYRILLICDEMI", Futura, "Futura PT", "Avenir Next", Avenir, "Century Gothic", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.95);
     width: 44px;
     height: 44px;
     border-radius: 14px;
@@ -318,7 +324,7 @@ body{
 .section-kicker {
     color: rgba(255,255,255,.78);
     font-weight: 800;
-    font-size: 17px;
+    font-size: 21px;
     margin-bottom: 10px;
 }
 
