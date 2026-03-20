@@ -3,560 +3,708 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ILARIO PLACANICA</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <meta name="description"
+          content="Ilario Placanica — 3D visualization, real-time environments, immersive property experiences and stylized character work." />
+    <title>Ilario Placanica — 3D Visualizer</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="page-top">
-      <div class="mark" aria-hidden="true">
-          <span class="mark-text">IP</span>
-      </div>
-    <h1 class="page-title">ILARIO PLACANICA</h1>
-  </div>
+    <div class="grain" aria-hidden="true"></div>
 
-  <div class="wrap">
-    <main class="card">
+    <header class="site-header" id="top">
+        <a class="brand" href="#top" aria-label="Go to top">
+            <span class="brand-mark">IP</span>
+            <span class="brand-text">ILARIO PLACANICA</span>
+        </a>
 
-      <section class="hero" id="home">
-        <div class="hero-topbar">
-          <div class="brand">Ilario</div>
-          <div class="hero-nav">
-            <a href="#home">Home</a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#selected-work">Select Work</a>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-          </div>
-        </div>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="hero-grid">
-          <div class="hero-left">
-            <h2>3D<br/>Visualizer</h2>
-          </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-          <div class="hero-right">
-            <h3>Great design should<br/>feel invisible.</h3>
-            <p>
-              From concept to final render, I build visuals that communicate clearly,
-              look premium, and convert.
-            </p>
-          </div>
-        </div>
-      </section>
+    <main>
+        <section class="hero" aria-label="Intro">
+            <div class="hero-media-grid" aria-hidden="true">
+                <figure class="hero-tile">
+                    <img src="assets/img/work-1.jpg" alt="Real Estate Experience" />
+                </figure>
+                <figure class="hero-tile">
+                    <img src="assets/img/work-2.jpg" alt="Interior visualization" />
+                </figure>
+                <figure class="hero-tile">
+                    <img src="assets/img/work-3.jpg" alt="Stylized character render" />
+                </figure>
+            </div>
 
-      <section class="strip">
-        <div class="trust">Trusted by Companies I’ve helped </div>
-        <div class="logos" aria-label="Brand logos">
-            <a class="logo-chip"
-               href="https://primulacostruzioni.com/"
-               target="_blank"
-               rel="noopener">
-                <span class="icon"></span> Primula Costruzioni
-            </a>
-            <a class="logo-chip"
-               href="https://cubico-work.com/"
-               target="_blank"
-               rel="noopener">
-                <span class="icon" style="border-radius:6px;"></span> Cubico
-            </a>
-        </div>
-      </section>
-
-      <section class="content" id="about">
-        <div class="content-grid">
-            <div>
-                <div class="section-kicker">About me:</div>
-
-                <p class="about-copy">
-                    I’m a 3D artist and designer from Bologna. My interest in digital media began in high school through Java, Scratch,
-                    and an independent exploration of the Adobe Creative Suite, which first sparked my curiosity for design.
-                    During my first year of Architecture at Politecnico di Torino, a drawing course introduced me to 3ds Max with V-Ray, opening my eyes to the world of 3D and digital visualization.
-                    Since then, I have developed a largely self-taught practice focused on visual representation, interactive media, and a broad range of 3D tools. This path led to a collaboration with Primula Costruzioni, 
-                    first through an internship and later through a professional collaboration focused on immersive real estate experiences.
+            <div class="hero-copy">
+                <h1>
+                    Designing visual worlds<br />
+                    that make architecture<br />
+                    and digital experiences feel inevitable.
+                </h1>
+                <p class="hero-text">
+                    3D visualizer focused on architectural storytelling, interactive real estate tools, web-based immersive experiences, and stylized character work.
                 </p>
-
-                <h2>EXPLORE MY PROJECTS:</h2>
             </div>
 
-          <div class="content-right">
-              <div class="contacts">
-                  <div class="section-kicker">Contacts :</div>
-                  <div class="contact-name">Ilario Placanica</div>
-                  <a class="contact-item" href="tel:+39 3483216319">+39 3483216319</a>
-                  <a class="contact-item" href="mailto:ilario.placanica1999@gmail.com">ilario.placanica1999@gmail.com</a>
-                  <a class="contact-item" href="https://www.linkedin.com/in/ilario-placanica-0055a2383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">LinkedIn</a>
-              </div>
-          </div>
-        </div>
+            <div class="hero-footer">
+                Available for premium archviz, immersive product, real estate, and spatial storytelling roles. Open to studios building real-time and experiential work.
+            </div>
+        </section>
 
-        <div class="works" id="projects">
-          <div class="work-tags">
-            <div class="work-tag-group">
-              <div class="work-tag-label">ARCHITECTURE</div>
-              <div class="work-tag arch"></div>
+        <section class="selected-work" id="selected-work">
+            <div class="section-head reveal">
+                <p class="eyebrow">Selected Work</p>
+                <h2>Few projects. Strong point of view.</h2>
             </div>
 
-            <div class="work-tag-group right">
-              <div class="work-tag-head">
-                <div class="work-tag-label">CHARACTER ANIMATION</div>
-
-                <a class="cta works-cta"
-                   href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
-                  Get in touch
-                  <span class="dot" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
+            <div class="project-index reveal">
+                <a class="project-index-item is-active"
+                   href="#work-1"
+                   data-preview-type="video"
+                   data-preview-src="assets/video/work-1-final.mp4">
+                    <span class="project-index-num">01</span>
+                    <span class="project-index-main">
+                        <strong>Immersive Real Estate Experience</strong>
+                        <small>Unreal Engine / real-time sales presentation / architectural storytelling</small>
+                    </span>
                 </a>
-              </div>
-              <div class="work-tag char"></div>
+
+                <a class="project-index-item"
+                   href="#work-2"
+                   data-preview-type="video"
+                   data-preview-src="assets/video/work-2-gallery-2.mp4">
+                    <span class="project-index-num">02</span>
+                    <span class="project-index-main">
+                        <strong>Immersive Property Cards</strong>
+                        <small>Web presentation / virtual tours / digital property showcase</small>
+                    </span>
+                </a>
+
+                <a class="project-index-item"
+                   href="#work-3"
+                   data-preview-type="video"
+                   data-preview-src="assets/video/work-3-final.mp4">
+                    <span class="project-index-num">03</span>
+                    <span class="project-index-main">
+                        <strong>CAPO — 2D to Real-Time 3D</strong>
+                        <small>Stylized character pipeline / modeling / rig-ready asset development</small>
+                    </span>
+                </a>
+
+                <a class="project-index-item"
+                   href="#work-4"
+                   data-preview-type="image"
+                   data-preview-src="assets/img/work-4.jpg">
+                    <span class="project-index-num">04</span>
+                    <span class="project-index-main">
+                        <strong>Character Sculpt Study</strong>
+                        <small>Lab / anatomy exploration / in-progress development</small>
+                    </span>
+                </a>
+
+                <div class="project-index-preview" aria-hidden="true">
+                    <img id="index-preview-image" src="assets/img/work-1.JPG" alt="Selected project preview" />
+                    <video id="index-preview-video"
+                           muted
+                           loop
+                           playsinline
+                           preload="metadata"
+                           poster="assets/img/work-1.JPG">
+                        <source src="assets/video/work-1-final.mp4" type="video/mp4" />
+                    </video>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <a class="work one" href="#work-1" aria-label="Work 1"></a>
-          <a class="work two" href="#work-2" aria-label="Work 2"></a>
-          <a class="work three" href="#work-3" aria-label="Work 3"></a>
-          <a class="work four" href="#work-4" aria-label="Work 4"></a>
-        </div>
-      </section>
-
-      <section class="project project-accent" id="work-1">
-        <div class="project-hero">
-          <div>
-            <div class="section-kicker">Work 01</div>
-            <h2 class="project-title">Immersive Real Estate Experience for Primula Costruzioni</h2>
-            <p class="project-sub">
-                Real-time architectural visualization software developed in Unreal Engine 5 to support the sales and presentation of a new residential building within its surrounding context. 
-                The project allows interactive exploration of the architecture and its interior spaces using 
-                real-time rendering and dynamic natural lighting, and is designed to be operated through a touch screen interface.
-            </p>
-
-            <div class="project-actions">
-              <a class="cta dark" href="#projects">
-                Back to previews
-                <span class="dot" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
-            </div>
-
-            <div class="stats">
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-illustrator.png" alt="Adobe Illustrator"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-cesium.png" alt="Cesium"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-comfyui.png" alt="comfyui"></div>
-            </div>
-          </div>
-
-          <div class="project-media bg1" aria-label="Work 1 main image"></div>
-        </div>
-
-        <div class="project-mid">
-          <button class="mid-visual"
-                  type="button"
-                  data-gallery="work-1-final"
-                  data-src="assets/video/work-1-final.mp4"
-                  data-label="Work 1 • Final video"
-                  aria-label="Open Work 1 final video">
-
-            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
-              <source src="assets/video/work-1-final.mp4" type="video/mp4">
-            </video>
-          </button>
-
-          <div class="features">
-              <div class="feature"><div class="f-ico">A</div><div><h4>Real-Time Visualization</h4><p>Interactive architectural visualization developed in Unreal Engine to explore the building and its apartments in real time.</p></div></div>
-              <div class="feature"><div class="f-ico">B</div><div><h4>Dynamic Sun System</h4><p>A real-time daylight system simulates natural lighting conditions throughout the day.</p></div></div>
-              <div class="feature"><div class="f-ico">C</div><div><h4>Interactive Navigation</h4><p>Users can move through the environment and explore the spaces in an intuitive way.</p></div></div>
-              <div class="feature"><div class="f-ico">D</div><div><h4>Touchscreen Interface</h4><p>The interface is designed for touchscreen interaction, making the experience suitable for real estate presentations.</p></div></div>
-              <div class="feature"><div class="f-ico">E</div><div><h4>Sales Presentation Tool</h4><p>The software is designed to help communicate the project and support the apartment sales process.</p></div></div>
-
-          </div>
-        </div>
-
-        <div class="catalog">
-          <div class="catalog-head">
-            <div>
-              <h3>Gallery</h3>
-              <small>Additional shots & breakdowns from the project</small>
-            </div>
-          </div>
-
-          <div class="catalog-grid">
-            <button class="catalog-item" type="button" data-gallery="work-1" data-src="assets/img/work-1-gallery-1.jpg"
-                    style="background-image:url('assets/img/work-1-gallery-1.jpg');">
-              <div class="label">City block modeling <span>Blender</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-1" data-src="assets/img/work-1-gallery-2.jpg"
-                    style="background-image:url('assets/img/work-1-gallery-2.jpg');">
-              <div class="label">Enviroment scene <span>Unreal Engine</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-1" data-src="assets/img/work-1-gallery-3.jpg"
-                    style="background-image:url('assets/img/work-1-gallery-3.jpg');">
-              <div class="label">Widget Blueprint <span>Unreal Enine</span></div>
-            </button>
-
-            <button class="catalog-item" type="button"
-                    data-gallery="work-1"
-                    data-src="assets/video/work-1-gallery-4.mp4"
-                    data-label="Work 1 • Video"
-                    style="background-image:url('assets/img/work-1-gallery-4.jpg');">
-              <div class="label">Logo design and animation <span>Blender</span></div>
-            </button>
-          </div>
-        </div>
-        
-        <div class="steps">
-          <h3>Workflow</h3>
-          <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Building and Context Modeling</strong><p>The architectural operation and its surrounding context were modeled in Blender, 
-                with a focus on producing a clean and controllable 3D base for real-time visualization. This phase included both the building massing and the neighborhood elements needed 
-                to place the project within a recognizable urban setting.</p></div>
-            <div class="step"><div class="big">2</div><strong>Unreal Assembly, Geospatial Integration, Materials, Lighting and Furnishing</strong><p>The modeled intervention was imported into Unreal Engine 
-                and integrated with the surrounding district inside a real-time environment. Cesium for Unreal was used to bring real-world geospatial data into the scene, helping place the project 
-                within a broader spatial context. Materials lighting and furnishing were then developed to improve readability, atmosphere, and overall visual quality inside the interactive experience.  </p></div>
-            <div class="step"><div class="big">3</div><strong>Interactive System Development and Windows Packaging</strong><p>The interactive experience was built in Unreal Engine through Blueprint-based systems, 
-                including actor logic, Widget Blueprints for the interface, a GameMode Blueprint tailored to touchscreen interaction, and a Player Controller Blueprint to manage user input and navigation. 
-                The final application was packaged as a standalone .exe for Windows, allowing the project to be presented as an interactive real estate tool outside the editor</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="project" id="work-2">
-        <div class="project-hero">
-          <div>
-            <div class="section-kicker">Work 02</div>
-            <h2 class="project-title">Immersive Property Cards for Primula Costruzioni</h2>
-            <p class="project-sub">A series of immersive property cards created to support the presentation and sale of renovated apartments within an existing building. 
-              A dedicated interactive page was developed for each unit, focusing on the interior spaces and communicating the character of every apartment through a clear and engaging experience. 
-              The website was built with Three.js and published via GitHub Pages. You can visit the page at:  
-                <a class="project-link" href="https://ilarioplacanica.github.io/Alfieri/A14/" target="_blank" rel="noopener">
-                    https://ilarioplacanica.github.io/Alfieri/A14/</a>
-             </p>
-
-            <div class="project-actions">
-              <a class="cta dark" href="#projects">
-                Back to previews
-                <span class="dot" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
+        <section class="project-section project-section--dark project-work-1" id="work-1">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-1.JPG');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <p class="project-number">Work 01</p>
+                    <h2 class="project-hero-title">Immersive Real Estate Experience for Primula Costruzioni</h2>
+                    <p class="project-hero-text">
+                        Real-time architectural visualization software developed in Unreal Engine 5 to support the sales and presentation of a new residential building within its surrounding context.
+                        The project enables interactive exploration of the architecture and interior spaces through real-time rendering, dynamic natural lighting, and a touchscreen-first interface.
+                    </p>
+                </div>
             </div>
 
-            <div class="stats">
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-illustrator.png" alt="Adobe Illustrator"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-github.png" alt="github"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-marzipano.png" alt="Marzipano"></div>
-                <div class="stat"><img class="tool-icon" src="assets/img/icon-hunyuan.png" alt="Hunyuan 3D"></div>
-
-            </div>
-          </div>
-
-          <div class="project-media bg2" aria-label="Work 2 main image"></div>
-        </div>
-
-        <div class="project-mid">
-          <button class="mid-visual"
-                  type="button"
-                  data-gallery="work-2-final"
-                  data-src="assets/video/work-2-final.mp4"
-                  data-label="Work 2 • Final video"
-                  aria-label="Open Work 2 final video">
-            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
-              <source src="assets/video/work-2-final.mp4" type="video/mp4">
-            </video>
-          </button>
-
-          <div class="features">
-              <div class="feature"><div class="f-ico">A</div><div><h4>Interactive Property Cards</h4><p>Each apartment is presented through a dedicated interactive page.</p></div></div>
-              <div class="feature"><div class="f-ico">B</div><div><h4>Interior-Focused Visualization</h4><p>The experience focuses on interior spaces due to the partial renovation of the building..</p></div></div>
-              <div class="feature"><div class="f-ico">C</div><div><h4>Web-Based Experience</h4><p>The project runs directly in the browser without requiring additional software.</p></div></div>
-              <div class="feature"><div class="f-ico">D</div><div><h4>Media Integration</h4><p>Video and visual content are integrated to communicate the apartment features.</p></div></div>
-              <div class="feature"><div class="f-ico">E</div><div><h4>Real Estate Marketing Tool</h4><p>The platform is designed to support the marketing and presentation of the apartments.</p></div></div>
-          </div>
-        </div>
-
-        <div class="catalog">
-          <div class="catalog-head">
-            <div><h3>Gallery</h3><small>Additional shots & breakdowns from the project</small></div>
-          </div>
-
-          <div class="catalog-grid">
-            <button class="catalog-item" type="button"
-                    data-gallery="work-2"
-                    data-src="tour:assets/tour/work-2/index.html"
-                    data-label="Work 2 • 360 Tour (Marzipano)"
-                    style="background-image:url('assets/img/work-2-gallery-1.JPG');">
-              <div class="label">Tour 360 <span>Marzipano</span></div>
-            </button>
-
-            <button class="catalog-item" type="button"
-                    data-gallery="work-2"
-                    data-src="assets/video/work-2-gallery-2.mp4"
-                    data-label="Work 2 • Video"
-                    style="background-image:url('assets/img/work-2-gallery-2.jpg');">
-              <div class="label">Video <span>Unreal Engine</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-2" data-src="assets/img/work-2-gallery-3.jpeg"
-                    style="background-image:url('assets/img/work-2-gallery-3.jpeg');">
-              <div class="label">360 Images <span>Unreal Engine</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-2" data-src="assets/img/work-2-gallery-4.jpg"
-                    style="background-image:url('assets/img/work-2-gallery-4.jpg');">
-              <div class="label">Urban Context <span>Hunyuan3D</span></div>
-            </button>
-          </div>
-        </div>
-
-        <div class="steps">
-          <h3>Workflow</h3>
-          <div class="steps-grid">
-              <div class="step"><div class="big">1</div><strong>Modeling and Unreal Scene Setup</strong><p>The real estate operation was modeled in Blender as the geometric base of the project, 
-                  then imported into Unreal Engine for scene development. Inside Unreal, the environment was refined through material setup, lighting, and furnishing, while the surrounding context 
-                  was generated with Hunyuan3D and integrated into the final scene assembly to complete the spatial framework of the experience. Blender’s modeling workflow is commonly used to build 
-                  and edit the scene geometry before downstream visualization work.</p></div>
-              <div class="step"><div class="big">2</div><strong>Render Production and Graphic Design</strong><p>360 panoramas and vertical still renders were produced in Unreal Engine from the final scene setup. 
-                  This stage relied on Unreal’s rendering pipeline to generate both immersive panoramic output and presentation stills, which were then refined in Photoshop and 
-                  Illustrator for layout, graphic hierarchy, and communication material. Unreal’s Movie Render Queue is the engine’s high-quality rendering pipeline for this kind of output. </p></div>
-              <div class="step"><div class="big">3</div><strong>Marzipano Tour Development</strong><p>The 360 renders were used to build a Marzipano virtual tour, with interactive hotspots added to 
-                  connect scenes and improve navigation between spaces. Marzipano is designed for web-based panoramic viewing, and its hotspot system places DOM elements at 
-                  fixed positions inside each panorama, making it suitable for scene-to-scene navigation in virtual tours.  </p></div>
-              <div class="step"><div class="big">4</div><strong>Web Deployment and Apartment Pages</strong><p>A dedicated URL was created for each apartment through GitHub Pages,
-                  while maintaining a consistent layout across all pages. Three.js was used to implement the GLB viewer,
-                  and the Marzipano tour was integrated into each page to combine 3D model viewing and panoramic navigation within a single web presentation.
-</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="project project-accent" id="work-3">
-        <div class="project-hero">
-          <div>
-            <div class="section-kicker">Work 03</div>
-            <h2 class="project-title">"CAPO" from "Necroville" - 2D to Real-Time 3D</h2>
-            <p class="project-sub">A 3D adaptation of “Capo” from the 2D series Necroville, developed through a game and animation-oriented workflow. 
-              The character was modeled in Blender with clean quad-based topology designed for proper deformation, stylized texturing, and shader development. 
-              The project also includes lighting, a minimal environment setup, and pose and animation tests to explore how the character translates from a flat illustration into a production-ready 3D asset.</p>
-
-            <div class="project-actions">
-              <a class="cta dark" href="#projects">
-                Back to previews
-                <span class="dot" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow">Role</p>
+                    <p>3D visualization, environment assembly, interface design, Blueprint development, real-time presentation.</p>
+                </div>
+                <div>
+                    <p class="eyebrow">Tools</p>
+                    <ul class="project-tool-list">
+                        <li>Unreal Engine</li>
+                        <li>Blender</li>
+                        <li>Photoshop</li>
+                        <li>Illustrator</li>
+                        <li>Cesium</li>
+                        <li>ComfyUI</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="stats">
-              <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
-              <div class="stat"><img class="tool-icon" src="assets/img/icon-comfyui.png" alt="Comfyui"></div>
-            </div>
-          </div>
+            <div class="project-split reveal">
+                <div class="project-copy-sticky">
+                    <p class="eyebrow">Why it matters</p>
+                    <h3 class="project-body-title">A sales tool, not just a render.</h3>
+                    <p>
+                        The experience was designed to make the project legible and desirable in real time. Instead of static imagery only, the interface supports active navigation, daylight variation, and spatial understanding during client presentations.
+                    </p>
+                    <div class="project-bullet-list">
+                        <p>Real-time visualization</p>
+                        <p>Dynamic daylight system</p>
+                        <p>Touchscreen-ready UX</p>
+                        <p>Context-aware presentation</p>
+                    </div>
+                </div>
 
-          <div class="project-media bg3" aria-label="Work 3 main image"></div>
-        </div>
-
-        <div class="project-mid">
-          <button class="mid-visual"
-                  type="button"
-                  data-gallery="work-3-final"
-                  data-src="assets/video/work-3-final.mp4"
-                  data-label="Work 3 • Final video"
-                  aria-label="Open Work 3 final video">
-            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
-              <source src="assets/video/work-3-final.mp4" type="video/mp4">
-            </video>
-          </button>
-
-          <div class="features">
-              <div class="feature"><div class="f-ico">A</div><div><h4>Stylized Character Modeling</h4><p>Creation of a stylized character with a focus on proportions and silhouette.</p></div></div>
-              <div class="feature"><div class="f-ico">B</div><div><h4>Animation-Ready Topology</h4><p>Quad-based topology designed to support clean deformation during animation.</p></div></div>
-              <div class="feature"><div class="f-ico">C</div><div><h4>Material and Lighting Setup</h4><p>Stylized materials and lighting were developed to enhance the character presentation.</p></div></div>
-              <div class="feature"><div class="f-ico">D</div><div><h4>Pose and Animation Tests</h4><p>Initial pose and animation experiments to evaluate the character’s performance.</p></div></div>
-          </div>
-        </div>
-
-        <div class="catalog">
-          <div class="catalog-head">
-            <div><h3>Gallery</h3><small>Additional shots & breakdowns from the project</small></div>
-          </div>
-
-          <div class="catalog-grid">
-            <button class="catalog-item" type="button" data-gallery="work-3" data-src="assets/img/work-3-gallery-1.jpg"
-                    style="background-image:url('assets/img/work-3-gallery-1.jpg');">
-              <div class="label">T Pose <span>ComfyUi</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-3" data-src="assets/img/work-3-gallery-2.jpg"
-                    style="background-image:url('assets/img/work-3-gallery-2.jpg');">
-              <div class="label">Modeling <span>Blender</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-3" data-src="assets/img/work-3-gallery-3.jpg"
-                    style="background-image:url('assets/img/work-3-gallery-3.jpg');">
-              <div class="label">Topology <span>Blender</span></div>
-            </button>
-
-            <button class="catalog-item" type="button" data-gallery="work-3" data-src="assets/img/work-3-gallery-4.jpg"
-                    style="background-image:url('assets/img/work-3-gallery-4.jpg');">
-              <div class="label">Rigify <span>Blender</span></div>
-            </button>
-          </div>
-        </div>
-
-        <div class="steps">
-          <h3>Workflow</h3>
-          <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Reference Setup and Turnaround Preparation</strong><p>The workflow started from a set of 2D character turnaround poses 
-                provided by the concept artist. ComfyUI was used to generate additional front and side T-pose references, creating a more consistent base for proportion matching and 
-                orthographic modeling in Blender. This step helped standardize the character views before moving into the 3D pha.</p></div>
-            <div class="step"><div class="big">2</div><strong>Character Modeling, Texturing and Material Setup</strong><p>The character was modeled in Blender with a focus on stylized proportions, 
-                readable silhouette, and clean surface definition. Once the base model was completed, texturing and material setup were developed to establish the final look of the asset, using 
-                Blender’s material system to define surface appearance, color response, and texture behavior.</p></div>
-            <div class="step"><div class="big">3</div><strong>Armature, Rigify Control Rig and Animation</strong><p>The rigging phase involved building the character armature and generating the animation 
-                controls with Rigify. Rigify uses a meta-rig workflow: the guide bones are first positioned to match the character, then a full control rig is generated from that structure. The animation 
-                was then created in Blender by posing the rig and setting keyframes in the timeline, allowing movement tests and basic character performance to be developed directly on the control setup.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="project" id="work-4">
-        <div class="project-hero">
-          <div>
-            <div class="section-kicker">Work 04</div>
-            <h2 class="project-title">Character Sculpt Study - Work in progress</h2>
-            <p class="project-sub">Stylized character sculpt in progress, developed in Blender. 
-              The project explores digital sculpting techniques with a focus on stylized anatomy, proportions, and silhouette.
-              The final goal is to rig and animate the character for videogame applications using an inverse kinematics Control Rig Blueprint in Unreal Engine.</p>
-
-            <div class="project-actions">
-              <a class="cta dark" href="#projects">
-                Back to previews
-                <span class="dot" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
+                <div class="project-feature-video js-open-lightbox"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Open Work 1 final video"
+                     data-type="video"
+                     data-src="assets/video/work-1-final.mp4"
+                     data-caption="Final real-time presentation video.">
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/work-1.JPG">
+                        <source src="assets/video/work-1-final.mp4" type="video/mp4" />
+                    </video>
+                </div>
             </div>
 
-            <div class="stats">
-              <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
+            <div class="project-gallery project-gallery--four reveal">
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-1-gallery-2.jpg"
+                        data-caption="Urban context assembled for the immersive real-time experience.">
+                    <img src="assets/img/work-1-gallery-2.jpg" alt="Urban environment scene" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-1-gallery-1.jpg"
+                        data-caption="Block modeling and massing development in Blender.">
+                    <img src="assets/img/work-1-gallery-1.jpg" alt="Block modeling in Blender" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-1-gallery-3.jpg"
+                        data-caption="Widget Blueprint and interaction logic development.">
+                    <img src="assets/img/work-1-gallery-3.jpg" alt="Widget blueprint screenshot" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-1-gallery-5.jpg"
+                        data-caption="Widget Blueprint and interaction logic development.">
+                    <img src="assets/img/work-1-gallery-5.jpg" alt="Master Material blueprint screenshot" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="video"
+                        data-src="assets/video/work-1-gallery-4.mp4"
+                        data-caption="Logo design and animation sequence.">
+                    <img src="assets/img/work-1-gallery-4.jpg" alt="Archisfera animation still" />
+                </button>
             </div>
-          </div>
 
-          <div class="project-media bg4" aria-label="Work 4 main image"></div>
-        </div>
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">From modeled context to packaged executable.</h3>
+                </div>
 
-        <div class="project-mid">
-          <button class="mid-visual"
-                  type="button"
-                  data-gallery="work-4"
-                  data-src="assets/img/work-4-mid.jpg"
-                  data-label="Work 4 • Preview"
-                  aria-label="Open Work 4 preview"
-                  style="background-image:url('assets/img/work-4-mid.jpg'); background-size:cover; background-position:center;">
-          </button>
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Building and context modeling</h4>
+                        <p>The architectural intervention and surrounding district were modeled in Blender to create a clean, controllable base for real-time visualization.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Unreal assembly and geospatial integration</h4>
+                        <p>The project was assembled in Unreal, enriched with Cesium context data, materials, lighting, furnishing, and atmosphere to improve readability and immersion.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Interactive systems and packaging</h4>
+                        <p>Blueprint logic, widgets, GameMode behavior, and controller systems were developed for touchscreen interaction, then packaged into a standalone Windows application.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-          <div class="features">
-              <div class="feature"><div class="f-ico">A</div><div><h4>Digital Sculpting</h4><p>Character developed through digital sculpting techniques in Blender.</p></div></div>
-              <div class="feature"><div class="f-ico">B</div><div><h4>Stylized Anatomy Study</h4><p>Focus on stylized proportions and anatomical structure.</p></div></div>
-              <div class="feature"><div class="f-ico">C</div><div><h4>Character Development Workflow</h4><p>Exploration of a character creation pipeline from sculpting to animation.</p></div></div>
-              <div class="feature"><div class="f-ico">D</div><div><h4>Game Animation Goal</h4><p>Planned animation using an inverse kinematics Control Rig Blueprint in Unreal Engine.</p></div></div>
-          </div>
-        </div>
+        <section class="project-section project-section--dark project-work-2" id="work-2">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-2.jpg');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <p class="project-number">Work 02</p>
+                    <h2 class="project-hero-title">Immersive Property Cards for Primula Costruzioni</h2>
+                    <p class="project-hero-text">
+                        A series of immersive apartment pages created to support the presentation and sale of renovated units within an existing building.
+                        Each property was translated into a dedicated digital experience centered on interiors, clarity, and atmosphere, then published on the web.
+                    </p>
+                </div>
+            </div>
 
-        <div class="catalog">
-          <div class="catalog-head">
-            <div><h3>Gallery</h3><small>Additional shots & breakdowns from the project</small></div>
-          </div>
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow">Role</p>
+                    <p>3D production, render direction, visual layout, virtual-tour integration, web presentation.</p>
+                </div>
+                <div>
+                    <p class="eyebrow">Tools</p>
+                    <ul class="project-tool-list">
+                        <li>Unreal Engine</li>
+                        <li>Blender</li>
+                        <li>Photoshop</li>
+                        <li>Illustrator</li>
+                        <li>GitHub Pages</li>
+                        <li>Marzipano</li>
+                        <li>Hunyuan 3D</li>
+                    </ul>
+                </div>
+            </div>
 
-          <div class="catalog-grid">
-            <button class="catalog-item" type="button" data-gallery="work-4" data-src="assets/img/work-4-gallery-1.jpg"
-                    style="background-image:url('assets/img/work-4-gallery-1.jpg');">
-              <div class="label">Front View <span>blender</span></div>
-            </button>
+            <div class="project-editorial reveal">
+                <div class="project-editorial-copy">
+                    <p class="eyebrow">Premise</p>
+                    <h3 class="project-body-title">Interior-first storytelling for real estate.</h3>
+                    <p>
+                        Because the building renovation was partial, the communication focused on interior quality, navigable panoramas, and digital property presentation rather than a fully spatialized exterior experience.
+                    </p>
+                    <a class="text-link" href="https://ilarioplacanica.github.io/Alfieri/A14/" target="_blank" rel="noopener">Visit the apartment page</a>
+                </div>
 
-            <button class="catalog-item" type="button" data-gallery="work-4" data-src="assets/img/work-4-gallery-2.jpg"
-                    style="background-image:url('assets/img/work-4-gallery-2.jpg');">
-              <div class="label">Side View <span>Blender</span></div>
-            </button>
+                <div class="project-work-2-showcase">
+                    <div class="project-media-card project-media-card--portrait project-media-card--phone js-open-lightbox"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Open Work 2 final video"
+                         data-type="video"
+                         data-src="assets/video/work-2-final.mp4"
+                         data-caption="Final vertical motion presentation.">
+                        <div class="phone-shell">
+                            <div class="phone-statusbar">
+                                <span class="phone-time">9:41</span>
+                                <div class="phone-dynamic-island"></div>
+                                <div class="phone-status-icons">
+                                    <span class="phone-signal"></span>
+                                    <span class="phone-wifi"></span>
+                                    <span class="phone-battery">100%</span>
+                                </div>
+                            </div>
 
-            <button class="catalog-item" type="button" data-gallery="work-4" data-src="assets/img/work-4-gallery-3.jpg"
-                    style="background-image:url('assets/img/work-4-gallery-3.jpg');">
-              <div class="label">Chest Detail <span>Blender</span></div>
-            </button>
+                            <div class="phone-screen">
+                                <video autoplay muted loop playsinline preload="metadata" poster="assets/img/work-2.jpg">
+                                    <source src="assets/video/work-2-final.mp4" type="video/mp4" />
+                                </video>
+                            </div>
 
-            <button class="catalog-item" type="button" data-gallery="work-4" data-src="assets/img/work-4-gallery-4.jpg"
-                    style="background-image:url('assets/img/work-4-gallery-4.jpg');">
-              <div class="label">Head Sculpting <span>Blender</span></div>
-            </button>
-          </div>
-        </div>
+                            <div class="phone-home-indicator"></div>
+                            <div class="phone-side-button"></div>
+                        </div>
+                    </div>
 
-        <div class="steps">
-          <h3>Workflow</h3>
-          <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Base Modeling from 2D Reference</strong><p>The project starts from 2D reference artwork used to define the character’s overall 
-                proportions, silhouette, and primary shapes. This phase focuses on building a clean base model that establishes the main structure before moving into the sculpting stage.</p></div>
-            <div class="step"><div class="big">2</div><strong>Sculpting, Detail and Retopology (In Progress)</strong><p>The character is currently being refined through digital sculpting, 
-                with attention to secondary forms, surface definition, and stylized anatomical detail. In parallel, the retopology phase is planned to rebuild the mesh into a cleaner and 
-                more animation-ready topology after sculpt development.</p></div>
-            <div class="step"><div class="big">3</div><strong>Inverse Kinematics Control Rig in Unreal Engine (Goal)</strong><p>The final goal is to bring the character into Unreal Engine and develop 
-                an inverse kinematics Control Rig setup for animation, with the aim of animating the character for a videogame environment. This stage will focus on building a rig structure 
-                suitable for game-oriented animation workflows, using Unreal’s Control Rig and IK systems to support posing and character control.</p></div>
-          </div>
-        </div>
-      </section>
+                    <div class="project-media-card project-media-card--tour js-open-lightbox"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Open 360 tour"
+                         data-type="tour"
+                         data-src="assets/tour/work-2/index.html"
+                         data-caption="Interactive 360 tour built with Marzipano.">
+                        <div class="project-tour-preview">
+                            <iframe src="assets/tour/work-2/index.html"
+                                    title="Marzipano tour preview"
+                                    loading="lazy"
+                                    tabindex="-1"
+                                    aria-hidden="true"></iframe>
+                            <span class="project-tour-badge">Open 360 tour</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="project-gallery project-gallery--four reveal">
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="video"
+                        data-src="assets/video/work-2-gallery-2.mp4"
+                        data-caption="Additional motion asset for the apartment presentation.">
+                    <img src="assets/img/work-2-gallery-2.jpg" alt="Apartment video still" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-2-gallery-3.jpeg"
+                        data-caption="360 imagery used for immersive browsing.">
+                    <img src="assets/img/work-2-gallery-3.jpeg" alt="Panorama preview" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-2-gallery-4.jpg"
+                        data-caption="Urban context and massing generated for the experience.">
+                    <img src="assets/img/work-2-gallery-4.jpg" alt="Urban context model" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-2.jpg"
+                        data-caption="Interior shot used as the case-study cover.">
+                    <img src="assets/img/work-2.jpg" alt="Interior hero render" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-2-gallery-5.png"
+                        data-caption="Additional gallery image for the apartment presentation.">
+                    <img src="assets/img/work-2-gallery-5.png" alt="Work 2 gallery image 5" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-2-gallery-6.png"
+                        data-caption="Additional gallery image for the apartment presentation.">
+                    <img src="assets/img/work-2-gallery-6.png" alt="Work 2 gallery image 6" />
+                </button>
+            </div>
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">From interior scenes to web deployment.</h3>
+                </div>
+
+                <div class="project-workflow-grid project-workflow-grid--four">
+                    <article>
+                        <span>01</span>
+                        <h4>Modeling and scene setup</h4>
+                        <p>The operation was modeled in Blender, imported into Unreal, and completed with materials, lighting, furniture, and generated urban context.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Render production and graphic design</h4>
+                        <p>Panoramas and vertical stills were rendered in Unreal, then refined in Photoshop and Illustrator for hierarchy and presentation.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Marzipano tour development</h4>
+                        <p>The 360 renders became a navigable web tour with hotspots and scene transitions designed for intuitive browsing.</p>
+                    </article>
+                    <article>
+                        <span>04</span>
+                        <h4>Publishing apartment pages</h4>
+                        <p>Each apartment received a dedicated web destination, combining imagery, motion, and immersive navigation inside a single online presentation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--dark project-work-3" id="work-3">
+            <div class="project-hero project-hero--video">
+                <div class="project-hero-media-wrap">
+                    <video class="project-hero-video"
+                           autoplay
+                           muted
+                           loop
+                           playsinline
+                           preload="metadata"
+                           poster="assets/img/work-3.jpg">
+                        <source src="assets/video/work-3-final.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+
+                <div class="project-hero-copy reveal">
+                    <p class="project-number">Work 03</p>
+                    <h2 class="project-hero-title">“CAPO” from “Necroville” — 2D to Real-Time 3D</h2>
+                    <p class="project-hero-text">
+                        A 3D adaptation of “Capo” from the 2D series Necroville, developed through a game and animation-oriented workflow.
+                        The project focuses on readable silhouette, deformation-friendly topology, stylized surface treatment, rig preparation, and motion testing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow">Role</p>
+                    <p>Character modeling, topology cleanup, material lookdev, lighting, rig preparation, animation tests.</p>
+                </div>
+                <div>
+                    <p class="eyebrow">Tools</p>
+                    <ul class="project-tool-list">
+                        <li>Blender</li>
+                        <li>ComfyUI</li>
+                        <li>Rigify</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="project-editorial reveal">
+                <div class="project-editorial-copy">
+                    <p class="eyebrow">Focus</p>
+                    <h3 class="project-body-title">From 2D identity to a presentable 3D character.</h3>
+                    <p>
+                        The project explores how a stylized illustrated character can be translated into a real-time 3D asset while preserving silhouette, appeal, and production logic. The goal was to create a model that feels faithful to the original design but also functional for rigging, lighting, and animation tests.
+                    </p>
+                </div>
+
+                <div class="project-work-3-showcase">
+                    <button class="project-media-card js-open-lightbox"
+                            type="button"
+                            data-type="image"
+                            data-src="assets/img/work-3.jpg"
+                            data-caption="Final showcase render of the CAPO character.">
+                        <img src="assets/img/work-3.jpg" alt="CAPO character final render" />
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-gallery project-gallery--four reveal">
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-3-gallery-1.jpg"
+                        data-caption="Supplementary turnaround references generated for modeling alignment.">
+                    <img src="assets/img/work-3-gallery-1.jpg" alt="T-pose reference" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-3-gallery-2.jpg"
+                        data-caption="Modeling phase in Blender.">
+                    <img src="assets/img/work-3-gallery-2.jpg" alt="Modeling stage in Blender" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-3-gallery-3.jpg"
+                        data-caption="Topology review and deformation planning.">
+                    <img src="assets/img/work-3-gallery-3.jpg" alt="Topology view" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-3-gallery-4.jpg"
+                        data-caption="Rigify-based rig and animation control setup.">
+                    <img src="assets/img/work-3-gallery-4.jpg" alt="Rig setup" />
+                </button>
+            </div>
+
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">Reference, model, shade, rig, animate.</h3>
+                </div>
+
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Reference setup</h4>
+                        <p>Turnaround poses provided by the concept artist were expanded with ComfyUI-generated front and side T-pose references to improve consistency during modeling.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Modeling and look development</h4>
+                        <p>The character was modeled with a focus on stylized proportions, readable silhouette, and materials that support the final presentation.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Rigging and animation tests</h4>
+                        <p>An armature and Rigify control rig were assembled to test deformation, posing, and basic animated performance directly in Blender.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--dark project-work-4" id="work-4">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-4.jpg');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <p class="project-number">Work 04</p>
+                    <h2 class="project-hero-title">Character Sculpt Study</h2>
+                    <p class="project-hero-text">
+                        Stylized character sculpt in development, focused on anatomy, proportion, silhouette, and a future transition toward animation-ready topology and Unreal-based control rig workflows.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow">Status</p>
+                    <p>Lab / Work in Progress</p>
+                </div>
+                <div>
+                    <p class="eyebrow">Focus</p>
+                    <p>Stylized character sculpt in development, focused on anatomy, proportion, silhouette, and a future transition toward animation-ready topology and Unreal-based control rig workflows.</p>
+                </div>
+            </div>
+
+            <div class="project-editorial reveal">
+                <div class="project-editorial-copy">
+                    <p class="eyebrow">Current direction</p>
+                    <h3 class="project-body-title">Stylized sculpting with a future real-time pipeline in mind.</h3>
+                    <p>
+                        The study is centered on anatomy, proportional clarity, silhouette, and the transition from sculpt exploration to animation-ready topology. The goal is not only sculpt fidelity, but a stronger bridge toward rigging and real-time presentation.
+                    </p>
+                </div>
+
+                <div class="project-work-4-feature">
+                    <button class="project-media-card js-open-lightbox"
+                            type="button"
+                            data-type="image"
+                            data-src="assets/img/work-4-mid.jpg"
+                            data-caption="Mid-progress viewport presentation.">
+                        <img src="assets/img/work-4-mid.jpg" alt="Mid-progress sculpt image" />
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-gallery project-gallery--four reveal">
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-4-mid.jpg"
+                        data-caption="Mid-progress viewport presentation.">
+                    <img src="assets/img/work-4-mid.jpg" alt="Mid-progress sculpt image" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-4-gallery-1.jpg"
+                        data-caption="Base modeling from 2D reference.">
+                    <img src="assets/img/work-4-gallery-1.jpg" alt="Base modeling reference" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-4-gallery-2.jpg"
+                        data-caption="Side view and proportional study.">
+                    <img src="assets/img/work-4-gallery-2.jpg" alt="Side view" />
+                </button>
+
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-4-gallery-4.jpg"
+                        data-caption="Head sculpting study.">
+                    <img src="assets/img/work-4-gallery-4.jpg" alt="Head sculpting" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-4.jpg"
+                        data-caption="Current overview of the sculpt.">
+                    <img src="assets/img/work-4.jpg" alt="Character sculpt overview" />
+                </button>
+
+            </div>
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">From 2D reference to a future game-ready character.</h3>
+                </div>
+
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Base modeling from 2D reference</h4>
+                        <p>The project begins from 2D reference artwork used to define proportions, silhouette, and primary forms, building a clean base model before the sculpting stage.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Sculpting, detail, and retopology</h4>
+                        <p>The character is being refined through digital sculpting, focusing on secondary forms, surface definition, and stylized anatomy, while retopology is planned to create a cleaner animation-ready mesh.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Unreal Control Rig and IK setup</h4>
+                        <p>The final objective is to bring the character into Unreal Engine and build an inverse kinematics Control Rig designed for game-oriented animation, posing, and character control.</p>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-grid reveal">
+                <div class="about-image-wrap">
+                    <img src="assets/img/hero.jpg" alt="Portrait of Ilario Placanica" class="about-image" />
+                </div>
+                <div class="about-copy">
+                    <p class="eyebrow">About</p>
+                    <h2>Architecture trained. Self-built across tools. Obsessed with visual clarity.</h2>
+                    <p>
+                        I’m a 3D artist and designer from Bologna. My interest in digital media began in high school through Java, Scratch, and an independent exploration of Adobe tools, which first sparked my curiosity for design.
+                    </p>
+                    <p>
+                        During my first year of Architecture at Politecnico di Torino, a drawing course introduced me to 3ds Max with V-Ray and opened the door to 3D and digital visualization. Since then I have developed a largely self-taught practice focused on visual representation, interactive media, and a broad set of 3D tools.
+                    </p>
+                    <p>
+                        That path led to collaboration with Primula Costruzioni, first through an internship and then through professional work centered on immersive real estate experiences and presentation systems.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-grid reveal">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let’s build work that feels premium, clear, and impossible to ignore.</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:ilario.placanica1999@gmail.com">ilario.placanica1999@gmail.com</a>
+                    <a href="tel:+393483216319">+39 3483216319</a>
+                    <a href="https://www.linkedin.com/in/ilario-placanica-0055a2383" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </section>
     </main>
-  </div>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Media viewer">
-      <button class="lb-close" type="button" id="lbClose" aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M6 6l12 12M18 6L6 18" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <img id="lbImg" src="" alt="" style="display:none;">
-      <video id="lbVid" style="display:none;" controls loop playsinline></video>
-      <iframe id="lbFrame" style="display:none;"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close media viewer">Close</button>
+        <div class="lightbox-shell">
+            <div class="lightbox-stage" id="lightbox-stage"></div>
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
