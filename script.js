@@ -81,31 +81,42 @@
     }
   }
 
-  function setProjectIndexPreview(type, src) {
-    const { previewContainer, previewImage, previewVideo, previewVideoSource } = ui;
-    if (!previewContainer || !previewImage || !previewVideo || !previewVideoSource || !src) return;
-    if (previewState.type === type && previewState.src === src) return;
+    function setProjectIndexPreview(type, src, poster = '') {
+        const { previewContainer, previewImage, previewVideo, previewVideoSource } = ui;
+        if (!previewContainer || !previewImage || !previewVideo || !previewVideoSource || !src) return;
+        if (
+            previewState.type === type &&
+            previewState.src === src &&
+            previewVideo.getAttribute('poster') === (poster || previewVideo.getAttribute('poster'))
+        ) return;
 
-    const isVideo = type === 'video';
-    previewContainer.classList.toggle('is-image', !isVideo);
+        const isVideo = type === 'video';
+        previewContainer.classList.toggle('is-image', !isVideo);
 
-    if (isVideo) {
-      if (previewVideoSource.getAttribute('src') !== src) {
-        stopPreviewVideo();
-        previewVideoSource.setAttribute('src', src);
-        previewVideo.load();
-      }
-      playPreviewVideo();
-    } else {
-      if (previewImage.getAttribute('src') !== src) {
-        previewImage.setAttribute('src', src);
-      }
-      stopPreviewVideo();
+        if (isVideo) {
+            stopPreviewVideo();
+
+            if (poster) {
+                previewVideo.setAttribute('poster', poster);
+            }
+
+            if (previewVideoSource.getAttribute('src') !== src) {
+                previewVideoSource.setAttribute('src', src);
+                previewVideo.load();
+            }
+
+            previewVideo.currentTime = 0;
+            playPreviewVideo();
+        } else {
+            if (previewImage.getAttribute('src') !== src) {
+                previewImage.setAttribute('src', src);
+            }
+            stopPreviewVideo();
+        }
+
+        previewState.type = type;
+        previewState.src = src;
     }
-
-    previewState.type = type;
-    previewState.src = src;
-  }
 
   function activateIndexItem(item) {
     if (!item) return;
@@ -113,10 +124,11 @@
     ui.indexItems.forEach((entry) => entry.classList.remove('is-active'));
     item.classList.add('is-active');
 
-    setProjectIndexPreview(
-      item.dataset.previewType || 'image',
-      item.dataset.previewSrc || ''
-    );
+      setProjectIndexPreview(
+          item.dataset.previewType || 'image',
+          item.dataset.previewSrc || '',
+          item.dataset.previewPoster || ''
+      );
   }
 
   function initProjectIndex() {
@@ -135,98 +147,167 @@
     });
   }
 
-  function clearLightboxStage() {
-    if (!ui.lightboxStage) return;
+    let lightboxItems = [];
+    let lightboxIndex = -1;
 
-    const activeVideo = ui.lightboxStage.querySelector('video');
-    const activeIframe = ui.lightboxStage.querySelector('iframe');
+    function clearLightboxStage() {
+        if (!ui.lightboxStage) return;
 
-    if (activeVideo) {
-      activeVideo.pause();
-      activeVideo.removeAttribute('src');
-      activeVideo.load();
+        const activeMedia = ui.lightboxStage.querySelector('video, iframe');
+        if (activeMedia) {
+            if (activeMedia.tagName === 'VIDEO') {
+                activeMedia.pause();
+                activeMedia.removeAttribute('src');
+                activeMedia.load();
+            }
+
+            if (activeMedia.tagName === 'IFRAME') {
+                activeMedia.setAttribute('src', 'about:blank');
+            }
+        }
+
+        ui.lightboxStage.querySelectorAll('img, video, iframe').forEach((node) => node.remove());
     }
 
-    if (activeIframe) {
-      activeIframe.setAttribute('src', 'about:blank');
+    function createLightboxMedia(type, src, caption) {
+        let mediaNode;
+
+        if (type === 'video') {
+            mediaNode = document.createElement('video');
+            mediaNode.controls = true;
+            mediaNode.autoplay = !prefersReducedMotion;
+            mediaNode.loop = true;
+            mediaNode.playsInline = true;
+            mediaNode.preload = 'metadata';
+            mediaNode.src = src;
+        } else if (type === 'tour') {
+            mediaNode = document.createElement('iframe');
+            mediaNode.src = src;
+            mediaNode.loading = 'lazy';
+            mediaNode.allow = 'fullscreen';
+            mediaNode.title = caption || 'Interactive tour';
+        } else {
+            mediaNode = document.createElement('img');
+            mediaNode.src = src;
+            mediaNode.alt = caption || 'Portfolio media';
+            mediaNode.loading = 'eager';
+        }
+
+        return mediaNode;
     }
 
-    ui.lightboxStage.innerHTML = '';
-  }
+    function updateLightboxNav() {
+        const prevButton = document.querySelector('.lightbox-nav--prev');
+        const nextButton = document.querySelector('.lightbox-nav--next');
 
-  function createLightboxMedia(type, src, caption) {
-    let mediaNode;
+        if (!prevButton || !nextButton) return;
 
-    if (type === 'video') {
-      mediaNode = document.createElement('video');
-      mediaNode.controls = true;
-      mediaNode.autoplay = !prefersReducedMotion;
-      mediaNode.loop = true;
-      mediaNode.playsInline = true;
-      mediaNode.preload = 'metadata';
-      mediaNode.src = src;
-    } else if (type === 'tour') {
-      mediaNode = document.createElement('iframe');
-      mediaNode.src = src;
-      mediaNode.loading = 'lazy';
-      mediaNode.allow = 'fullscreen';
-      mediaNode.title = caption || 'Interactive tour';
-    } else {
-      mediaNode = document.createElement('img');
-      mediaNode.src = src;
-      mediaNode.alt = caption || 'Portfolio media';
-      mediaNode.loading = 'eager';
+        const showNav = lightboxItems.length > 1;
+        prevButton.classList.toggle('is-hidden', !showNav);
+        nextButton.classList.toggle('is-hidden', !showNav);
     }
 
-    return mediaNode;
-  }
+    function renderLightboxItem(index) {
+        const { lightboxStage, lightboxCaption } = ui;
+        if (!lightboxStage || !lightboxCaption) return;
+        if (!lightboxItems.length || index < 0 || index >= lightboxItems.length) return;
 
-  function openLightbox(type, src, caption = '') {
-    const { lightbox, lightboxStage, lightboxCaption } = ui;
-    if (!lightbox || !lightboxStage || !lightboxCaption || !src) return;
+        lightboxIndex = index;
+        clearLightboxStage();
 
-    clearLightboxStage();
+        const item = lightboxItems[lightboxIndex];
+        const mediaNode = createLightboxMedia(item.type, item.src, item.caption);
 
-    const mediaNode = createLightboxMedia(type, src, caption);
-    lightboxStage.appendChild(mediaNode);
-    lightboxCaption.textContent = caption;
+        lightboxStage.appendChild(mediaNode);
+        lightboxCaption.textContent = item.caption || '';
+        updateLightboxNav();
+    }
 
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    body.classList.add('lightbox-open');
-  }
+    function openLightboxGroup(items, startIndex = 0) {
+        const { lightbox } = ui;
+        if (!lightbox || !items.length) return;
 
-  function closeLightbox() {
-    if (!ui.lightbox) return;
-    clearLightboxStage();
-    ui.lightbox.classList.remove('is-open');
-    ui.lightbox.setAttribute('aria-hidden', 'true');
-    body.classList.remove('lightbox-open');
-  }
+        lightboxItems = items;
+        renderLightboxItem(startIndex);
 
-  function initLightbox() {
-    if (!ui.lightboxTriggers.length) return;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        body.classList.add('lightbox-open');
+    }
 
-    ui.lightboxTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', (event) => {
-        event.preventDefault();
+    function openLightbox(type, src, caption = '') {
+        openLightboxGroup([{ type, src, caption }], 0);
+    }
 
-        openLightbox(
-          trigger.dataset.type || 'image',
-          trigger.dataset.src || '',
-          trigger.dataset.caption || ''
-        );
-      });
-    });
+    function showPreviousLightboxItem() {
+        if (lightboxItems.length <= 1) return;
+        const nextIndex = (lightboxIndex - 1 + lightboxItems.length) % lightboxItems.length;
+        renderLightboxItem(nextIndex);
+    }
 
-    ui.lightboxClose?.addEventListener('click', closeLightbox);
+    function showNextLightboxItem() {
+        if (lightboxItems.length <= 1) return;
+        const nextIndex = (lightboxIndex + 1) % lightboxItems.length;
+        renderLightboxItem(nextIndex);
+    }
 
-    ui.lightbox?.addEventListener('click', (event) => {
-      if (event.target === ui.lightbox) {
-        closeLightbox();
-      }
-    });
-  }
+    function closeLightbox() {
+        if (!ui.lightbox) return;
+        clearLightboxStage();
+        ui.lightbox.classList.remove('is-open');
+        ui.lightbox.setAttribute('aria-hidden', 'true');
+        body.classList.remove('lightbox-open');
+        lightboxItems = [];
+        lightboxIndex = -1;
+    }
+
+    function initLightbox() {
+        if (!ui.lightboxTriggers.length) return;
+
+        ui.lightboxTriggers.forEach((trigger) => {
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const gallery = trigger.closest('.project-gallery');
+                if (gallery) {
+                    const galleryTriggers = [...gallery.querySelectorAll('.js-open-lightbox')];
+                    const items = galleryTriggers.map((item) => ({
+                        type: item.dataset.type || 'image',
+                        src: item.dataset.src || '',
+                        caption: item.dataset.caption || ''
+                    }));
+                    const startIndex = galleryTriggers.indexOf(trigger);
+
+                    openLightboxGroup(items, startIndex);
+                    return;
+                }
+
+                openLightbox(
+                    trigger.dataset.type || 'image',
+                    trigger.dataset.src || '',
+                    trigger.dataset.caption || ''
+                );
+            });
+        });
+
+        ui.lightboxClose?.addEventListener('click', closeLightbox);
+
+        document.querySelector('.lightbox-nav--prev')?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showPreviousLightboxItem();
+        });
+
+        document.querySelector('.lightbox-nav--next')?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showNextLightboxItem();
+        });
+
+        ui.lightbox?.addEventListener('click', (event) => {
+            if (event.target === ui.lightbox) {
+                closeLightbox();
+            }
+        });
+    }
 
   function initKeyboardShortcuts() {
     document.addEventListener('keydown', (event) => {

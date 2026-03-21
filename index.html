@@ -71,6 +71,7 @@
                    href="#work-1"
                    data-preview-type="video"
                    data-preview-src="assets/video/work-1-final.mp4">
+                   data-preview-poster="assets/img/work-1.JPG?v=2">
                     <span class="project-index-num">01</span>
                     <span class="project-index-main">
                         <strong>Immersive Real Estate Experience</strong>
@@ -82,6 +83,7 @@
                    href="#work-2"
                    data-preview-type="video"
                    data-preview-src="assets/video/work-2-gallery-2.mp4">
+                   data-preview-poster="assets/img/work-2-gallery-2.jpg">
                     <span class="project-index-num">02</span>
                     <span class="project-index-main">
                         <strong>Immersive Property Cards</strong>
@@ -93,6 +95,7 @@
                    href="#work-3"
                    data-preview-type="video"
                    data-preview-src="assets/video/work-3-final.mp4">
+                   data-preview-poster="assets/img/work-3.jpg">
                     <span class="project-index-num">03</span>
                     <span class="project-index-main">
                         <strong>CAPO — 2D to Real-Time 3D</strong>
@@ -165,6 +168,7 @@
                     </p>
                     <div class="project-bullet-list">
                         <p>Real-time visualization</p>
+                        <p>First-person walkthrough</p>
                         <p>Dynamic daylight system</p>
                         <p>Touchscreen-ready UX</p>
                         <p>Context-aware presentation</p>
@@ -185,13 +189,6 @@
             </div>
 
             <div class="project-gallery project-gallery--four reveal">
-                <button class="project-gallery-card js-open-lightbox"
-                        type="button"
-                        data-type="image"
-                        data-src="assets/img/work-1-gallery-2.jpg"
-                        data-caption="Urban context assembled for the immersive real-time experience.">
-                    <img src="assets/img/work-1-gallery-2.jpg" alt="Urban environment scene" />
-                </button>
 
                 <button class="project-gallery-card js-open-lightbox"
                         type="button"
@@ -199,6 +196,14 @@
                         data-src="assets/img/work-1-gallery-1.jpg"
                         data-caption="Block modeling and massing development in Blender.">
                     <img src="assets/img/work-1-gallery-1.jpg" alt="Block modeling in Blender" />
+                </button>
+
+                <button class="project-gallery-card js-open-lightbox"
+                        type="button"
+                        data-type="image"
+                        data-src="assets/img/work-1-gallery-2.jpg"
+                        data-caption="Urban context assembled for the immersive real-time experience.">
+                    <img src="assets/img/work-1-gallery-2.jpg" alt="Urban environment scene" />
                 </button>
 
                 <button class="project-gallery-card js-open-lightbox"
@@ -688,11 +693,15 @@
         </section>
     </main>
 
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-        <button class="lightbox-close" type="button" aria-label="Close media viewer">Close</button>
+    <div class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close lightbox">Close</button>
+
         <div class="lightbox-shell">
-            <div class="lightbox-stage" id="lightbox-stage"></div>
-            <p class="lightbox-caption" id="lightbox-caption"></p>
+            <div class="lightbox-stage">
+                <button class="lightbox-nav lightbox-nav--prev" type="button" aria-label="Previous media">‹</button>
+                <button class="lightbox-nav lightbox-nav--next" type="button" aria-label="Next media">›</button>
+            </div>
+            <p class="lightbox-caption"></p>
         </div>
     </div>
 
