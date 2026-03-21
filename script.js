@@ -84,33 +84,31 @@
     function setProjectIndexPreview(type, src, poster = '') {
         const { previewContainer, previewImage, previewVideo, previewVideoSource } = ui;
         if (!previewContainer || !previewImage || !previewVideo || !previewVideoSource || !src) return;
-
-        if (
-            previewState.type === type &&
-            previewState.src === src &&
-            previewVideo.getAttribute('poster') === (poster || previewVideo.getAttribute('poster'))
-        ) {
-            return;
-        }
+        if (previewState.type === type && previewState.src === src) return;
 
         const isVideo = type === 'video';
         previewContainer.classList.toggle('is-image', !isVideo);
 
         if (isVideo) {
             stopPreviewVideo();
+            previewVideo.removeAttribute('poster');
+            previewVideo.style.opacity = '0';
 
-            if (poster) {
-                previewVideo.setAttribute('poster', poster);
-            }
+            const revealAndPlay = () => {
+                previewVideo.currentTime = 0;
+                previewVideo.style.opacity = '1';
+                playPreviewVideo();
+            };
 
             if (previewVideoSource.getAttribute('src') !== src) {
                 previewVideoSource.setAttribute('src', src);
+                previewVideo.addEventListener('loadeddata', revealAndPlay, { once: true });
                 previewVideo.load();
+            } else {
+                revealAndPlay();
             }
-
-            previewVideo.currentTime = 0;
-            playPreviewVideo();
         } else {
+            previewVideo.style.opacity = '1';
             if (previewImage.getAttribute('src') !== src) {
                 previewImage.setAttribute('src', src);
             }
